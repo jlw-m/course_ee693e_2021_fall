@@ -1,12 +1,12 @@
 ---
-title: "01: Clicktok: Click Fraud Detection using Traffic Analysis
-Shishir Nagaraja, Ryan Shah"
+title: "01a: Deploying a Rural Wireless Telemedicine System: Experiences in Sustainability
+Sonesh Surana, Rabin Patra, Sergiu Nedevschi, and Eric Brewer"
 date: 2021-08-30
 type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): Alvin Yang, Thomas Yang"
+summary: "Presenter(s): Nguyen Banh"
 
 # Provide other tags that describe the paper
 tags:
