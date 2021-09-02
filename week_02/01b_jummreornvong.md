@@ -1,12 +1,12 @@
 ---
-title: "01: Clicktok: Click Fraud Detection using Traffic Analysis
+title: "01: Telemedicine and Medical Education in the Age of COVID-19
 Shishir Nagaraja, Ryan Shah"
 date: 2021-08-30
 type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): Alvin Yang, Thomas Yang"
+summary: "Presenter(s): Nguyen Banh, Saige Dacuycuy, Beenet Alemayehu"
 
 # Provide other tags that describe the paper
 tags:
