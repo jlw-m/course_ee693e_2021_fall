@@ -1,6 +1,6 @@
 ---
 title: "01: Telemedicine and Medical Education in the Age of COVID-19
-Shishir Nagaraja, Ryan Shah"
+Oranicha Jumreornvong, Emmy Yang, Jasmine Race, and Jacob Appel, MD, JD, MPD"
 date: 2021-08-30
 type: book
 commentable: true
