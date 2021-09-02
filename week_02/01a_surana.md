@@ -6,7 +6,7 @@ type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): Nguyen Banh"
+summary: "Presenter(s): Nguyen Banh, Saige Dacuycuy, Beenet Alemayehu"
 
 # Provide other tags that describe the paper
 tags:
