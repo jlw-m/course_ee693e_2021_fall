@@ -1,24 +1,23 @@
 ---
-title: "02: 2FA-PP: 2nd Factor Phishing Prevention
-Enis Ulqinaku, Daniele Lain, Srdjan Capkun"
+title: "02: A Telehealth Architecture for Networked Embedded Systems: A Case Study in In Vivo Health Monitoring
+Dabiri, Massey, Member, Noshadi, Hagopian, Lin, Tan, Schmidt, and Sarrafzadeh"
 date: 2021-09-02
 type: book
 commentable: true
 # Provide the name of the presenter
-summary: "Presenter(s): Alvin Yang and Thomas Yang"
+summary: "Presenter(s): Clyde James Felix, Tasmia Tahmid, Jeanalyn Wadsack-Myers "
 # Provide other tags that describe the paper
 tags:
 - teaching
 - ee693e
-- fraud
-- 2FA
+- Telehealth
 ---
 ***
 ## Paper Summary
 Two factor authentication (2FA) schemes help provide a strong user authentication alongside the traditional password. However, many 2FA schemes are still vulnerable to phishing attacks, where the 2FA can be phished along with the password. This is where the paper proposes 2nd Factor Phishing Prevention, 2F-PP, which uses the browser’s API to communicate with an external device, such as a mobile phone, and lets the phone check what domain the browser is connected to. With this domain check, the phone can decide whether to authenticate the log-in or reject it and alert the user of an attempted attack.
 ***
 ## Presentation
-{{< youtube PH9HPmnIK24 >}}
+{{< youtube mjYajOtTV7A >}}
 ***
 ## Review
 ### Strengths
