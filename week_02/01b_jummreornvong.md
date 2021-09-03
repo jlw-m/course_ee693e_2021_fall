@@ -6,7 +6,7 @@ type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): Nguyen Banh, Saige Dacuycuy, Beenet Alemayehu"
+summary: "Presenter(s): Nguyen Banh, Saige Dacuycuy, Beemnet Alemayehu"
 
 # Provide other tags that describe the paper
 tags:
@@ -17,7 +17,7 @@ tags:
 
 ***
 ## Paper Summary
-This paper provides a summary of telecommunications and its efforts in the United States education system and frontlines. In the wake of the COVID-19 pandemic, medical school instructors have been reluctant to have its students be engaged in in-person curriculums, which includes experience in clinical rotations. To counter the pandemic while providing sufficient training to medical students, educators and frontline workers have accelerated the use of telecommunications in order for students to handle hospital-related tasks. Due to the advancement of telemedicine technology, the medical field has introduced 4 new applications of telemedicine to the curriculum: telesurgery; telerehabilitation; tele-intensive care units (tele-ICU); and chronic disease management and remote patient monitoring (RPM). The hope for the telemedicine training is to enrich students on how to use the technology in a professional and research-based manner.
+This paper provides a summary of telecommunications and its efforts in the United States education system and frontlines. In the wake of the COVID-19 pandemic, medical school instructors have been reluctant to have their students be engaged in in-person curriculums, which includes experience in clinical rotations. To counter the pandemic while providing sufficient training to medical students, educators and frontline workers have accelerated the use of telecommunications in order for students to handle hospital-related tasks. Due to the advancement of telemedicine technology, the medical field has introduced 4 new applications of telemedicine to the curriculum: telesurgery; telerehabilitation; tele-intensive care units (tele-ICU); and chronic disease management and remote patient monitoring (RPM). The hope for the telemedicine training is to enrich students on how to use the technology in a professional and research-based manner.
 ***
 
 ## Presentation
