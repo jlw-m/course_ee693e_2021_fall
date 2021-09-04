@@ -62,6 +62,7 @@ Bodi maintained a positive cash flow in 2006 and 2007 after accounting for both 
 
 
 ##Audience Questions
+
 In Table-1 it is showing they calculated the monthly cost with 8% interest (last column). What is the rationel/reasoning behind considering 8% interest? 
 
 In the article the authors stated that “the last column includes interest on borrowed capital that is typically used to pay up-front costs.” Take a look at the interest rate a couple of years back since 2008 which is the paper’s publication date. Although they have lower interest rates at that time, in the past the interest rate can go up to 8% or 9% https://ycharts.com/indicators/india_real_interest_rate.
