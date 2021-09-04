@@ -17,7 +17,7 @@ tags:
 
 ***
 ## Paper Summary
-This paper delves into the creation and testing of a new protocol, Clicktok, in an attempt to detect fraudulent clicks from real clicks where ad companies may pay money per click on their ads. There are various attack methods used to generate these clicks whether it comes from a bot farm, or from malicious apps installed on a normal user's device, detecting inorganic clicks from organic clicks is a concern to prevent adversaries from profiting off from ad companies. Clicktok attempts to classify these clicks by utilizing the fact that fake generated click spam imitates user traffic in an attempt to stay stealthy. By analyzing repeating patterns in a user's click history, Clicktok aims to identify these false clicks from real clicks.
+While there is a belief that information and communication technology (ICT) may have a major effect on development, developing sustainable ICT initiatives is challenging in reality. A typical project begins with a pilot stage to establish fundamental objectives, followed by a deployment stage focused on scalability and sustainability. In rural India, an ICT initiative is using long-distance Wi-fi networking to provide high-quality telemedicine between eye clinics and distant communities. TIER assisted Aravind Eye Care System (www.aravind.org) in southern India with the deployment of a rural wireless telemedicine system. Aravind plans to expand the Theni network to 50 locations if this initiative is successful. Within three years, the network's full capacity is anticipated to conduct 500,000 examinations per year and offer eye care to a rural population of 2.5 million.
 ***
 
 ## Presentation
@@ -27,67 +27,46 @@ This paper delves into the creation and testing of a new protocol, Clicktok, in 
 
 ## Review
 ### Strengths
-- This paper offers a method of detecting fraudulent clicks that does not rely on a threshold based defense.
-- By taking advantage that click fraud often uses previous user traffic in order to fabricate fake clicks, Clicktok is able to identify click fraud even though the attacker may be imitating organic clicks.
+- Optimizing the current system: required to increase rural residents' access to eye care systems.
+- Financial sustainability results: achieved positive cash flow which means the monthly revenue can cover the monthly expense.
+- Operational sustainability results: 
+    - Improving power quality has reduced the number of power-related router downtimes, 
+    - Limit downtime periods to under one day, 
+    - Eliminated CF card corruptions.
+    - Operational responsibility for the network has migrated from Tier 3 to local staff (Tier 1).
 
 ### Weaknesses
-- Although Clicktok seems promising in detecting fraudulent clicks at various rates of attack, it seem it may be possible for an adversary to create a method that is able to bypass Clicktok's detection system.
-- It may be difficult to keep track of malicious clicks with IP aggregation and churn. As some networks may try to avoid exposing IP addresses, it makes attributing fraudulent clicks to a certain source more difficult.
+- Limited local expertise
+  - Misconfiguration
+  - Limited diagnostic capabilities
+  - Equipment misuse.
+- Hardware and software failures
+  - Poor-quality power
+- Lack of connectivity
+  - Have to physically go on site
+- Lack of physical access
+  - Remote locations are far or hard to access
 
 ### Detailed Comments
-By detecting the timing characteristics of click traffic feed received at ad networks, one can detect fraudulent clicks that attempt to be stealthy by sending a low amount of clicks. This is useful as farming clicks is becoming more economical with advances in technology, meaning that more attackers can have the luxury of sending a low amount of fraudulent clicks in an attempt to not be flagged as fake. Then even with a wide range of rates which an attacker can send fake clicks, whether the adversary decides to imitate previous user clicks or generate random clicks, Clicktok is able to identify repeating patterns of the imitation clicks, or the randomness of the clicks as not being attributed to real clicks.
+They educate both local employees and local suppliers, although the latter have a stronger IT background and are more equipped to tackle more complex problems. India is experiencing an ophthalmologist deficit, with 90% of physicians located in metropolitan regions. Aravind vision centers use a wireless local-loop technology, or VC, that is provided by a local carrier. A counselor follows up with patients after a doctor's diagnosis at the base hospital. A VC visit costs the patient 25 cents.
 
-As for the potential weakness in Clicktok, a more advanced click randomization/generation scheme may make detecting fraudulent clicks from real organic clicks difficult. If an attacker is able to uncover how Clicktok determines fraudulent clicks, they may be able to generate a workaround towards Clicktok's defenses. Then addressing the IP aggregation and churn, as some networks may aggregate IPs, it makes identifying individual user's clicks all the more difficult which would result in a lower efficacy when identifying false clicks.
+In two years, the Aravind-Theni telemedicine network allowed 51,205 remote eye exams. 96 percent of Aravind patients who get cataracts lose their ability to work. Long-distance connection through Wi-Fi is a low-cost option for remote hospitals. Wi-Fi significantly lowers deployment and operating expenses in a variety of ways. Additionally, it provides the hospital with the operational flexibility to establish connections whenever and wherever they are required.
 
-### Implementation
-The paper provides an explanation into how they implemented their algorithm of Clicktok, as well as how they collected the data they used to train their model. The way they collected their data was by setting up traffic monitors on backbone routers of a university campus network. They collected a total of 217,334,190 unique clicks, between June 2015 and November 2017. The data was collected after obtaining ethical approval, and all stored data is encrypted. As for how they implemented their algorithm, they took the click traffic of each user (click stream), and attempted to decompose the click streams of each user into basic patterns by using a non-negative matrix factorization algorithm. This decomposes the click traces into pattern matrices, and weight matrices as to how often each pattern occurs.
+As the connection distance grows, the chance of two end-hosts initiating transmission inside a window defined by proportionately rising propagation delay rises as well. WiLDNet was developed by the Wildnet team to solve these concerns. While power outages in rural India are common, we were shocked at the extent of poor power quality. When disconnected from the grid, low-quality electricity flows via low-quality devices. It took us days and a significant financial investment to install or repair equipment.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokSystemArchitecture.png" title="System Architecture" width="320" >}}
+A 10-year-old solar panel costs $8.24, or approximately 35% more per kilowatt-hour than grid electricity. A UPS with enough battery capacity to last three days during an outage costs $6.08 per month, or about 24 times higher.
 
-They then use a moving window function to reduce sensitivity to synchronization errors from timing misalignments.
+TIER's main objective is to improve system availability, reduce operational costs, and eventually delegate operational responsibilities to local teams. We developed a monitoring system, alternate back-channels for remote management in the event of connection failures, and self-recovery mechanisms, all of which contributed to increased operational sustainability. A critical component of automatic recovery is a system reboot initiated by a watchdog processor. Referral revenue covers 20% of the cost of cataract operations performed at the base hospital on patients recommended by the center. The following table summarizes the profits of Theni's five venture capitalists.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokSystemPartitioning.png" title="Traffic Partitioning" width="300" >}}
+Bodi maintained a positive cash flow in 2006 and 2007 after accounting for both construction and operational costs associated with the network. Aravind is expanding the vision center network to 50 locations. Aravind's vision centers have been a tremendous success, benefiting both the hospitals and the patients. Over 50,000 virtual patient-doctor consultations have been conducted in the system's first two years of operation. Aravind has delegated operational responsibilities for the network to local employees.
 
-Afterwards by examining the weight matrix, they can determine which patterns are repeated and are potentially fraudulent clicks, as patterns matrices that are repeated can be attributed to organic click spam (fake clicks imitating user inputs). They cluster the closely related patterns matrices, to then determine inorganic click spam by finding clusters with a higher entropy, characteristic of clicks generated from a randomized/constant time offsets. The remaining clicks can then be attributed to real users.
-
-Another technique Clicktok applies is bait clicks (active defense), where ad networks inject bait clicks, so any malicious users that may try to imitate these bait clicks are identified with Clicktok's algorithm and flagged as fraudulent.
-
-### Experimentation
-In order to evaluate Clicktok, the authors of the paper, used the click traffic obtained, filtered it and exposed it to a testbed with malicious apps and click malware. Through this they were able to get a click traffic that contained both legitimate and fake clicks.
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable1.png" title="Table 1: Passive Detection" width="320" >}}
-In their experimentation, they consider *stealthy* attackers to be under 5 clicks a day per device, *sparse* to be 5-15 clicks, and *firehose* to be over 15 clicks. From Table 1, it can be seen that Clicktok with a passive defense is effective in identifying click fraud. With a longer ad network duration, leads to better inference, especially against stealth attacks.
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable2.png" title="Table 2: Detection Across Multiple Clickstreams" width="320" >}}
-They also categorized and analyzed different click categories, where sponsored are advertisements displayed by search engines, contextual are ads displayed on a webpage based on keywords present in the webpage, and mobile are ads exclusively present on mobile devices. From the results in Table 2, it is shown that the Clicktok is able to identify fraudulent clicks across the ad categories at a high true positive rate of ~90%, and a low false positive rate at around ~0.004%.
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable3.png" title="Table 3: Active Defense" width="320" >}}
-When applying the active defense with bait clicks, it can be seen in Table 3, that it improves detection rates. With both the increase in true positive rates, and decrease in false positive rates, show that an active defense may be important in identifying fake clicks.
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
-Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
 ##Audience Questions
-What are the causes of a synch error, factors, reasons?
-The causes of synch error may be slight differences in recorded time stamps with the data, or perhaps duplicated user clicks that may happen from errors in the user's app/browser. This might lead into false transmissions.
+In Table-1 it is showing they calculated the monthly cost with 8% interest (last column). What is the rationel/reasoning behind considering 8% interest? 
 
-Clicktok outperforms its competitors when analyzing low rate attacks, what is the differences it has over them?
-The difference is that Clicktok is able to identify patterns where a malicious app may try to replay user clicks. So it would then be able to determine through a low rate attack if the clicks produced by the low rate is fraudulent.
+In the article the authors stated that “the last column includes interest on borrowed capital that is typically used to pay up-front costs.” Take a look at the interest rate a couple of years back since 2008 which is the paper’s publication date. Although they have lower interest rates at that time, in the past the interest rate can go up to 8% or 9%.
 
-What are the limitations of using threshold based approaches?
-The limitations of threshold based approaches is that with how economical setting up click farms is now, adversaries can now attack with sending clicks under the threshold and still be able to profit.
 
-The paper states that "the mimicry defense detects around 81% of fake clicks in stealthy (low rate) attacks... What about high rate attacks?"
-With high rate attacks, the mimicry defense is actually even better at around 99% true positive rate for a 12 week duration with Google's ad network.
+Why do you think improving community awareness in rural areas for “eye camps” beforehand is not one of their targeted areas of improvement for the eye care system before trying to implement telemedicine?
 
-In the passive setup, the authors only demonstrated that their method works for the dataset they choose. Why can't the attacker produce click pattern that is statistically indistinguishable with real click? (i.e. an adversary attacker)
-The attacker could potentially produce a click pattern that is similar to a user, but the paper focuses on malicious apps that replay user's clicks, or that uses a random/fixed interval delay to send clicks. A malicious app might require more resources to send fraudulent clicks.
-
-Why active defense improves detection rates better than passive defense?
-An active defense improves detection rates, as the bait clicks allow the defense algorithm to detect whether malicious apps are replaying the bait clicks as the bait clicks are sent with known intervals, making detection of replayed clicks better.
-
-How would a machine learning algorithm specifically designed to mimic click patterns of humans, be able to break the algorithm?
-It would probably be able to break this algorithm as this method looks for patterns in clicking and then the variance of these clicks to determine true from false clicks. So a machine learning algorithm may be able to produce similar click patterns that defeat both detection methods. With that said, it may then result in future methods of using machine learning to then detect fake clicks.
-
-Do you think there are other factors, in addition to time patterns/properties, that can help to verify authentic click traffic to further increase the accuracy of the proposed technique(s)?
-There may be other factors such as location of the IP being considered where the time in the location where a click is received might give clues as to whether the click is genuine. Other factors may also include, device type, operating system, etc., as click farms might have similar configurations.
+The authors stated that “Aravind’s first strategy to address needless blindness was to conduct periodic “eye camps” in rural areas.” So “eye camps” are an attempt to improve community awareness in rural areas. But the result from “eye camps” only reached 7% of the population and did not solve the issue of doctor scarcity. 
