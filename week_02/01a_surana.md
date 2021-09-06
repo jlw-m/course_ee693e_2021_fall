@@ -6,7 +6,7 @@ type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): Nguyen Banh, Saige Dacuycuy, Beenet Alemayehu"
+summary: "Presenter(s): Nguyen Banh, Saige Dacuycuy, Beemnet Alemayehu"
 
 # Provide other tags that describe the paper
 tags:
@@ -61,7 +61,7 @@ TIER's main objective is to improve system availability, reduce operational cost
 Bodi maintained a positive cash flow in 2006 and 2007 after accounting for both construction and operational costs associated with the network. Aravind is expanding the vision center network to 50 locations. Aravind's vision centers have been a tremendous success, benefiting both the hospitals and the patients. Over 50,000 virtual patient-doctor consultations have been conducted in the system's first two years of operation. Aravind has delegated operational responsibilities for the network to local employees.
 
 
-##Audience Questions
+### Audience Questions
 
 In Table-1 it is showing they calculated the monthly cost with 8% interest (last column). What is the rationel/reasoning behind considering 8% interest? 
 
