@@ -24,6 +24,7 @@ With the advances of wireless technology and embedded systems, it is possible to
 - Provides flexibility in terms of functionality and the type of applications that it supports.
 - The network strucure is capable of expansion in the quality of sensor nodes in a body and the quality of bodies to be analyzed.
 - Direct, continuous, and minimally invasive pressure measurements enabling the creation of therapeutic guidelines for the lower urinary track.
+- The concept is supported and validated by a case study and experiments. 
 
 ### Weaknesses
 - There are security risks in data transmission from sensor node to server. The _Man in the Middle_ attack is only of the common attacks that can view and edit data during the data transmission process.
