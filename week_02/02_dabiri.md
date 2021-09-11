@@ -29,7 +29,7 @@ With the advances of wireless technology and embedded systems, it is possible to
 ### Weaknesses
 - There are security risks in data transmission from sensor node to server. The _Man in the Middle_ attack is only of the common attacks that can view and edit data during the data transmission process.
 - The major limitation of the case study is that the experiments presented in the paper are limited to only two trials because of the surgical procedure and thus the case study results can validate the concept only.
-- The paper does not include aspects of cryptography protection.  
+- The paper does not include aspects of cryptography protection to protect communications from malicious eavesdropping and tampering..  
 - The telehealth architecture for a networked embedded system presented in the paper is an old-fashioned infrastructure. The latest research and development in this area show more updated infrastructure for similar network embedded systems. 
 - Battery power is a limitation of the implemented design. The architecture uses a li-polymer battery as a power source to support the sensor bridge, signal conditioning circuit and wireless communication but the battery cannot be recharged or changed after it has been implanted.
 - The paper lacks further guidelines to improve wireless network protocol in the future.
