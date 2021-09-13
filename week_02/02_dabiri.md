@@ -41,18 +41,19 @@ The paper presents a novel hierarchical network architecture that enables real-t
 A case study is being conducted to develop and implement an In Vivo active pressure monitoring. Localized obstructions between the kidney and the urethra cause elevated pressures in both the upper urinary tract and lower urinary tract, which often leads to increased risk of infection, kidney stones, bladder and various kidney diseases. An elevated pressure in the urinary tract is one of the major symptoms of urinary blockage. Therefore, if this change in pressure can be detected effectively, diagnosis of urinary tract diseases will be possible at an early stage. To address the problem of localized pressure monitoring, an implantable active pressure sensor has been developed and implemented for the continuous measurement of elevated pelvic and urethral renal pressures. The Active pressure monitoring system has five major segments namely, pressure transducer, catheter design, power and communication, remote in vivo software configuration, biocompatible packaging. The overall goal of the in vivo pressure monitoring system is to actively gather and distribute information on the pressure within the upper urinary tract in a manner that is extremely fault tolerant. Then the collected data is transmitted to a PDA (personal digital assistant) that uploads the data to an online database for further research. 
 
 ### Experimentation
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/responsetime.jpg" title="Response Time" width="300" >}}
+<!-- {{< figure src="https://github.com/jlw-m/course_ee693e_2021_fall/raw/main/week_02/images/Drift_Tolerance_Analysis.PNG" title="Analysis of Drift Tolerance with Various Frequencies and Duty Cycles" width="300" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/successrate.jpg" title="Success Rate with One Round" width="300" >}}
+{{< figure src="https://github.com/jlw-m/course_ee693e_2021_fall/raw/main/week_02/images/In_Vivo_Pressures.PNG" title="In Vivo Pressures" width="300" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/multipleattempts.jpg" title="Success Rate with Multiple Rounds" width="300" >}} -->
+{{< figure src="https://github.com/jlw-m/course_ee693e_2021_fall/raw/main/week_02/images/Detrusor_Pressure.PNG" title="Detrusor Pressure" width="300" >}} -->
 
 ### Discussion
-As we can see from the first figure, we can see all of the variations in timings that 2FA-PP observes, whether it being a normal login, to a phishing attack which modifies the obfuscated code. Although phishing attacks are able to successfully modify the obfuscated code, the round trip and modification takes a considerable amount of time, where we can set our threshold to contain the vast majority of our baseline timing, while preventing a majority of phishing attacks.
+From the table, we can see the results of one of the dry-lab experiments to explore which frequency and duty cycle combination would minimize the drift that was found in the signal during the pressure sensor characterization tests. It was found that a frequency of 50k along with a duty cycle of 20 gave the best results with a drift rate which was able to last 800+ hours before reaching 10% drift.
 
-As from the second figure, by setting the threshold accordingly, we see that attackers within a different locality as the user have a difficult time successfully attacking 2FA-PP. However, if they are in the same locality, such as the same Wi-Fi or Hotspot, the success rate is significantly higher. We could reduce the success rate by tightening our threshold, but this is at the cost of false positives, where legitimate logins are deemed suspicious.
+The second figure shows the results of the experiment in vivo using a porcine (pig) model. One sensor was implanted into the bladder and the other in the peritoneal cavity. The results show pressure measurements of a pig’s bladder voiding profile.
 
-For the third figure, as this is a scalable implementation, we can send multiple challenges to the client. This lessens the chance for an attacker to successfully complete all of the challenges within the given time frame, therefore securing the login from phishing attacks. We find that at about 5 challenges, gives the best chance of preventing phishing attacks, even with local adversaries. 
+The third figure shows the detrusor pressure measurements derived from subtracting the peritoneal cavity pressure from the bladder pressure. The detrusor is a muscle layer that forms on the bladder wall which gives a more accurate reading of bladder activity since it is unaffected by factors such as abdominal straining, gas and abdominal contents.
+
 
 ### Questions
 (1) How much empahsize is given to the security of the central server once all the data is collected and stored?
