@@ -1,7 +1,7 @@
 ---
 title: "02: Edge-Assisted Control for Healthcare Internet of Things: A Case Study on PPG-Based Early Warning Score
 Arman Anzanpour, Delaram Amiri, Iman Azimi, Marco Levorato, Nikil Dutt, Pasi Liljeberg, and Amir M. Rahmani"
-date: 2021-09-02
+date: 2021-09-15
 type: book
 commentable: true
 # Provide the name of the presenter
