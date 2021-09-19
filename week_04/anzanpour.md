@@ -1,17 +1,17 @@
 ---
-title: "02: 2FA-PP: 2nd Factor Phishing Prevention
-Enis Ulqinaku, Daniele Lain, Srdjan Capkun"
+title: "02: Edge-Assisted Control for Healthcare Internet of Things: A Case Study on PPG-Based Early Warning Score
+Arman Anzanpour, Delaram Amiri, Iman Azimi, Marco Levorato, Nikil Dutt, Pasi Liljeberg, and Amir M. Rahmani"
 date: 2021-09-02
 type: book
 commentable: true
 # Provide the name of the presenter
-summary: "Presenter(s): Alvin Yang and Thomas Yang"
+summary: "Presenter(s): Clyde James B Felix, Tasmia Tahmid, Saige J Dacuycuy"
 # Provide other tags that describe the paper
 tags:
 - teaching
 - ee693e
-- fraud
-- 2FA
+- Edge-Assisted
+- PPG
 ---
 ***
 ## Paper Summary
@@ -22,12 +22,14 @@ Two factor authentication (2FA) schemes help provide a strong user authenticatio
 ***
 ## Review
 ### Strengths
-- 2FA-PP requires little user interaction to set up, and no user interaction per login once set up.
-- Time added by 2FA-PP is negligible, adding about less than a seconds worth towards the login time.
-- Utilizes currently available software and hardware used in current 2FA schemes, such as bluetooth and browser APIs, so implementation into current systems is feasible.
+- Edge-assisted technology dynamically control sensor settings according to user's status
+- Edge controller is energy effectve, capable of saving 49% of battery power
+- The device, while undergoing hibernation, is effectively capable of recording all events from the user
 
 ### Weaknesses
-- As 2FA-PP is timing based, attackers within the same locality as the user (such as on the same Hotspot or Wi-Fi) has a significantly higher chance at success than other attackers
+- Data transfer bandwidth takes up a lot of energy consumption
+- Depending on the pigmentation of the user's skin, the light from the LEDs may not pentrate through the skin. Therefore, the sensor might give inaccurate measurements
+- Temperature sensor may be affected by ambient temperature of the hand while the device is in the glove (e.g. prespiration)
 ### Detailed Comments
 2FA-PP is a novel 2FA scheme which helps mitigate phishing attacks. Although it has a poor time preventing phishing attacks on the same network, with an attacker success rate having a worse case scenario of 35% success rate if not tuned correctly, it is more than likely that the phishing attack will occur from a proxy server, moving its location far from the user, meaning it would be able to prevent a majority of phishing attacks. Since 2FA-PP only requires the user to set up an application and the server to set up a database to handle interactions with the application, it is a user friendly scheme which is easy to implement into existing structures, using current generation browser APIs to communicate with the phone’s BLE, which is readily available to a majority of users who use 2FA. Some worries for 2FA-PP stems from the use of the browser’s API to communicate with BLE, as this can be a vector for attack by the phishing user where they can take over communication and report a real domain as opposed to the phishing domain, but this is circumvented by the use of obfuscation techniques, such that the report of the domain will be unobfuscated in a certain way, preventing a phishing user from figuring out and using this obfuscation technique within the given time frame.
 
