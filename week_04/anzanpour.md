@@ -28,7 +28,6 @@ Two factor authentication (2FA) schemes help provide a strong user authenticatio
 
 ### Weaknesses
 - Data transfer bandwidth takes up a lot of energy consumption
-- Depending on the pigmentation of the user's skin, the light from the LEDs may not pentrate through the skin. Therefore, the sensor might give inaccurate measurements
 - Temperature sensor may be affected by ambient temperature of the hand while the device is in the glove (e.g. prespiration)
 - PPG signal is vulnerable to body movements
 ### Detailed Comments
