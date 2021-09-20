@@ -15,7 +15,7 @@ tags:
 ---
 ***
 ## Paper Summary
-Two factor authentication (2FA) schemes help provide a strong user authentication alongside the traditional password. However, many 2FA schemes are still vulnerable to phishing attacks, where the 2FA can be phished along with the password. This is where the paper proposes 2nd Factor Phishing Prevention, 2F-PP, which uses the browser’s API to communicate with an external device, such as a mobile phone, and lets the phone check what domain the browser is connected to. With this domain check, the phone can decide whether to authenticate the log-in or reject it and alert the user of an attempted attack.
+Internet of Things (Iot)  are key techonologies to remote health monitoring application. In this application, sensor devices can measure patient vitals and wirelessly send its gathered data into a database. With the aim of preventing deterioation and death in chronic patients, certain challenges and tradeoffs are considered to improve the Quality of Experience (QoE) of the technology. One of the main tradeoffs mentioned is between measuring patient data accurately and the energy consumption of the sensor devices. This paper proposes an edge-assisted techonology that dynamically controls sensing quality and signal energy with respect to the patient's activity and health status. The proposed technology introduces an optmized way of saving energy while maintaining high signal quality. This paper also examines a case study on a Photoplethysmography (PPG) based early warning score (EWS) system.
 ***
 ## Presentation
 {{< youtube REIuUV1U448 >}}
@@ -67,8 +67,9 @@ The authors mentions that they plan optimize the data transfer bandwidth. Since 
 
 (2) Would there be a case where energy efficiency is not given as much consideration to increase the accuracy of measurement depending on the patient?
 
-
+Yes, it is possible when a patient is mostly bedridden. In this case, the sensor devices does not need to be adjusted to save energy.
 
 (3) Do you think the perspiration during physical activities is a factor that affects the error in the sensors?
 
+It is possible that perspirations can affect sensor measurements. Further research will have to be conducted on whether perspiration plays a great factor in the error.
 
