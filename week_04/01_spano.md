@@ -1,23 +1,26 @@
 ---
-title: "01: Clicktok: Click Fraud Detection using Traffic Analysis
-Shishir Nagaraja, Ryan Shah"
-date: 2021-08-30
+title: "01: Low-Power Wearable ECG Monitoring System for Multiple-Patient Remote Monitoring
+Elisa Spanò,Stefano Di Pascoli, and Giuseppe Iannaccone"
+date: 2021-09-13
 type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): Alvin Yang, Thomas Yang"
+summary: "Presenter(s): Nguyen Banh, Beemnet Alemayehu, Jeanalyn Wadsack-Myers"
 
 # Provide other tags that describe the paper
 tags:
 - teaching
 - ee693e
+- ECG
+- IoT
+- ZigBee
 
 ---
 
 ***
 ## Paper Summary
-This paper delves into the creation and testing of a new protocol, Clicktok, in an attempt to detect fraudulent clicks from real clicks where ad companies may pay money per click on their ads. There are various attack methods used to generate these clicks whether it comes from a bot farm, or from malicious apps installed on a normal user's device, detecting inorganic clicks from organic clicks is a concern to prevent adversaries from profiting off from ad companies. Clicktok attempts to classify these clicks by utilizing the fact that fake generated click spam imitates user traffic in an attempt to stay stealthy. By analyzing repeating patterns in a user's click history, Clicktok aims to identify these false clicks from real clicks.
+The paper introduces a wearable ECG monitoring devices that is dedicated to non-technical users and is integrated into the broader IoT infrastructure. A prototype with integrated front end and off-the-shelf components was introduced with multiple advantages with respect to the state of the art. These advantages include record-low energy per effective number of quantized levels, an architecture providing low marginal cost per added sensor, and seamless integration with other smart home systems using a single IoT infrastructure. This ECG wearable can encourage users to develop a healthy lifestyle and also decrease medical costs by allowing them to get ahead of their conditions. 
 ***
 
 ## Presentation
@@ -27,12 +30,18 @@ This paper delves into the creation and testing of a new protocol, Clicktok, in 
 
 ## Review
 ### Strengths
-- This paper offers a method of detecting fraudulent clicks that does not rely on a threshold based defense.
-- By taking advantage that click fraud often uses previous user traffic in order to fabricate fake clicks, Clicktok is able to identify click fraud even though the attacker may be imitating organic clicks.
+-	Does not require deep technical knowledge to use or implement
+-	Less power consumption and high signal quality
+-	Easy to integrate with other biomedical devices 
+-	Can monitor up to six patients 
+-	Easily available data visualizations
+-	Detailed explanation of the setup
+
 
 ### Weaknesses
-- Although Clicktok seems promising in detecting fraudulent clicks at various rates of attack, it seem it may be possible for an adversary to create a method that is able to bypass Clicktok's detection system.
-- It may be difficult to keep track of malicious clicks with IP aggregation and churn. As some networks may try to avoid exposing IP addresses, it makes attributing fraudulent clicks to a certain source more difficult.
+-	Signal quality testing on humans not thorough
+-	Movement and respiration induced baseline drift
+-	Prone to magnetic interference
 
 ### Detailed Comments
 By detecting the timing characteristics of click traffic feed received at ad networks, one can detect fraudulent clicks that attempt to be stealthy by sending a low amount of clicks. This is useful as farming clicks is becoming more economical with advances in technology, meaning that more attackers can have the luxury of sending a low amount of fraudulent clicks in an attempt to not be flagged as fake. Then even with a wide range of rates which an attacker can send fake clicks, whether the adversary decides to imitate previous user clicks or generate random clicks, Clicktok is able to identify repeating patterns of the imitation clicks, or the randomness of the clicks as not being attributed to real clicks.
@@ -67,27 +76,15 @@ When applying the active defense with bait clicks, it can be seen in Table 3, th
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
 Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
-##Audience Questions
-What are the causes of a synch error, factors, reasons?
-The causes of synch error may be slight differences in recorded time stamps with the data, or perhaps duplicated user clicks that may happen from errors in the user's app/browser. This might lead into false transmissions.
+### Audience Questions
+1. While using the device, does a patient's physical activity (e.g. running, standing still, etc.) affect the magnitude of the ECG signal (i.e. mV to V)?
+The patient’s physical activity does affect the signal reading, but not in terms of changing order of magnitudes. The paper states that the peak-to-peak amplitude is approximately around 1 mV but can reach up to 3 mV. So, an amplitude reading in V magnitude does not look like a possibility.
 
-Clicktok outperforms its competitors when analyzing low rate attacks, what is the differences it has over them?
-The difference is that Clicktok is able to identify patterns where a malicious app may try to replay user clicks. So it would then be able to determine through a low rate attack if the clicks produced by the low rate is fraudulent.
+2. Can this wearable ECG monitoring system detect "Arrythmias (problem in heart rythm/missing or irregular heartbeat)"?
+There was no official testing done to see how this device performs in Arrythmias detection, but based on the information provided we can make an educated guess. The ECG signal provides a clearly identifiable reading of the QRS Complex, the P and T waves, and the ST segment. These are all important information used in identifying Arrythmias, the only requirement would be to collect the data over enough amount of time. 
 
-What are the limitations of using threshold based approaches?
+3. What do you think should be improved in the system/experiment?
 The limitations of threshold based approaches is that with how economical setting up click farms is now, adversaries can now attack with sending clicks under the threshold and still be able to profit.
 
-The paper states that "the mimicry defense detects around 81% of fake clicks in stealthy (low rate) attacks... What about high rate attacks?"
-With high rate attacks, the mimicry defense is actually even better at around 99% true positive rate for a 12 week duration with Google's ad network.
-
-In the passive setup, the authors only demonstrated that their method works for the dataset they choose. Why can't the attacker produce click pattern that is statistically indistinguishable with real click? (i.e. an adversary attacker)
-The attacker could potentially produce a click pattern that is similar to a user, but the paper focuses on malicious apps that replay user's clicks, or that uses a random/fixed interval delay to send clicks. A malicious app might require more resources to send fraudulent clicks.
-
-Why active defense improves detection rates better than passive defense?
-An active defense improves detection rates, as the bait clicks allow the defense algorithm to detect whether malicious apps are replaying the bait clicks as the bait clicks are sent with known intervals, making detection of replayed clicks better.
-
-How would a machine learning algorithm specifically designed to mimic click patterns of humans, be able to break the algorithm?
-It would probably be able to break this algorithm as this method looks for patterns in clicking and then the variance of these clicks to determine true from false clicks. So a machine learning algorithm may be able to produce similar click patterns that defeat both detection methods. With that said, it may then result in future methods of using machine learning to then detect fake clicks.
-
-Do you think there are other factors, in addition to time patterns/properties, that can help to verify authentic click traffic to further increase the accuracy of the proposed technique(s)?
-There may be other factors such as location of the IP being considered where the time in the location where a click is received might give clues as to whether the click is genuine. Other factors may also include, device type, operating system, etc., as click farms might have similar configurations.
+-	More thorough signal quality and range testing 
+-	Evaluate security of data server 
