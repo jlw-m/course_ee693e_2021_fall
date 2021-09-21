@@ -53,7 +53,11 @@ Once the smartphone application is registered as a 2FA device, the flow of authe
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig19.png" title="24-hour Health Monitoring of a Person" width="300" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall.wiki.git" title="The three-layer architecture of the proposed system" width="300" >}}
+{{< figure src="https://www.researchgate.net/figure/The-three-layer-architecture-of-the-proposed-system_fig7_342787437)" title="The three-layer architecture of the proposed system" width="300" >}}
+
+https://github.com/gustybear-teaching/course_ee693e_2021_fall.wiki.git
+
+
 
 ### Discussion
 As we can see from the first figure, we can see the uncertainty increasing for activities that require more physical effort. The probable reason for variation in the RMSE is due to the oscillating nature for heart rate, oxygen saturation, and respiration rate of each individual when undergoing each activity. Although each individual is healthy, it is more likely that each individual reacts differently to a certain activity.
