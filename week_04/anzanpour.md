@@ -55,7 +55,7 @@ Once the smartphone application is registered as a 2FA device, the flow of authe
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.9.JPG" title="The three-layer architecture of the proposed system" width="300" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_04/images/Anzanpour_Fig.10.JPG" title="Sensor device functions flowchart" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.10.JPG" title="Sensor device functions flowchart" width="300" >}}
 
 
 
