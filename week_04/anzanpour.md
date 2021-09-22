@@ -45,13 +45,6 @@ Although these are the two main components to be implemented, there are also som
 Once the smartphone application is registered as a 2FA device, the flow of authentication is as follows. When a client logs into the server, the server will request the 2FA device, or smartphone in our case, a token. To get this token, a challenge is sent in a form of a JavaScript file, which is encrypted with a key which only the server and smartphone have. The smartphone knows the answer to this JavaScript file, which is used to verify the URL. Once the smartphone sends the decryption key to the client, it will start a timer, where the browser will execute the JavaScript file to unobfuscate the ciphertext it contains. The obfuscation process contains references to the legitimate URL, which is obtained through the browser’s reference to the URL, window.location, which cannot be modified by a phishing user. Once the challenge is completed, the answer is sent to the smartphone for verification. If correct and within the timing threshold, the smartphone will send the token to verify the login.
 
 ### Experimentation
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig18a.png" title="The Effect of Activity Type on Total RMSE" width="300" >}}
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig18b.png" title="The Average of Total RMSE in Different Activites" width="300" >}}
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Tabl3.png" title="Total Monitoring Time, Average Power Consumption, and Missing Event Due to Different Scenarios for Sensing Device Hibernation Duration" width="300" >}}
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig19.png" title="24-hour Health Monitoring of a Person" width="300" >}}
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.9.JPG" title="The three-layer architecture of the proposed system" width="300" >}}
 
@@ -59,7 +52,14 @@ Once the smartphone application is registered as a 2FA device, the flow of authe
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.11.JPG" title="High-level edge-assisted control architecture" width="300" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.12.JPG" title="High-level edge-assisted control architecture" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.12.JPG" title="System design-time block diagram" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig18a.png" title="The Effect of Activity Type on Total RMSE" width="300" >}}
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig18b.png" title="The Average of Total RMSE in Different Activites" width="300" >}}
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig19.png" title="24-hour Health Monitoring of a Person" width="300" >}}
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Tabl3.png" title="Total Monitoring Time, Average Power Consumption, and Missing Event Due to Different Scenarios for Sensing Device Hibernation Duration" width="300" >}}
 
 ### Discussion
 As we can see from the first figure, we can see the uncertainty increasing for activities that require more physical effort. The probable reason for variation in the RMSE is due to the oscillating nature for heart rate, oxygen saturation, and respiration rate of each individual when undergoing each activity. Although each individual is healthy, it is more likely that each individual reacts differently to a certain activity.
