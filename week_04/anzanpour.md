@@ -57,7 +57,9 @@ Once the smartphone application is registered as a 2FA device, the flow of authe
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.10.JPG" title="Sensor device functions flowchart" width="300" >}}
 
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.11.JPG" title="High-level edge-assisted control architecture" width="300" >}}
 
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig.12.JPG" title="High-level edge-assisted control architecture" width="300" >}}
 
 ### Discussion
 As we can see from the first figure, we can see the uncertainty increasing for activities that require more physical effort. The probable reason for variation in the RMSE is due to the oscillating nature for heart rate, oxygen saturation, and respiration rate of each individual when undergoing each activity. Although each individual is healthy, it is more likely that each individual reacts differently to a certain activity.
