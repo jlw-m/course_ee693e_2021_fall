@@ -24,7 +24,7 @@ The paper introduces a wearable ECG monitoring devices that is dedicated to non-
 ***
 
 ## Presentation
-{{< youtube C2LOWF_K-FM >}}
+{{< youtube 5FkW8F8-CMw >}}
 
 ***
 
