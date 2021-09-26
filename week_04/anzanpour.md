@@ -87,7 +87,7 @@ The authors mentions that they plan optimize the data transfer bandwidth. Since 
 
 (2) Would there be a case where energy efficiency is not given as much consideration to increase the accuracy of measurement depending on the patient?
 
-Yes, it is possible when a patient is mostly bedridden. In this case, the sensor devices does not need to be adjusted to save energy. In an extreme situation, there could be a situation where the individual is in constant activity for the entire day. If the individual is running a marathon, especially one with different conditions, then the device would need to be active at all times to get a accurate measurement of the patient's condition. If the sensor node goes through hibernation, it might not record the most critical events of the marathon.
+Yes, it is possible when a patient is mostly bedridden. In this case, the sensor devices does not need to be adjusted to save energy. In an extreme situation, there could be a situation where the individual is in constant activity for the entire day. If the individual is running a marathon, especially one with different environmental conditions, then the device would need to be active at all times to get a accurate measurement of the patient's condition. If the sensor node goes through hibernation, it might not record the most critical events of the marathon.
 
 (3) Do you think the perspiration during physical activities is a factor that affects the error in the sensors?
 
