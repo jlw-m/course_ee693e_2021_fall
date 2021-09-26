@@ -67,16 +67,16 @@ The performance of the proposed system  and evaluation results in terms of accur
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Fig19.png" title="24-hour health monitoring of a person" width="300" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/main/main/week_04/images/Anzanpour_Table3.png" title="Outputs due to different scenarios for sensing device hibernation duration" width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_04/images/Anzanpour_Table3.png" title="Outputs due to different scenarios for sensing device hibernation duration" width="300" >}}
 
 ### Discussion
 As we can see from 5th figure under experimentation section, we can see the uncertainty increasing for activities that require more physical effort. The probable reason for variation in the RMSE is due to the oscillating nature for heart rate, oxygen saturation, and respiration rate of each individual when undergoing each activity. Although each individual is healthy, it is more likely that each individual reacts differently to a certain activity.
 
 From the 6th under experimentation section, by setting the driving current of the LEDs higher, we see that there is less variation in the RMSE. This is due to the notion that a higher driving current in an LED results in higher intensities of light in the LED; therefore, the detection of the PPG signals are more accurate. From this figure, the authors were able to show that setting the current at 3.5 mA gives acceptable RMSE because of the variation in any physical activity. This is especially true with sleeping, sitting and walking. 
 
-For the table under experimentation section, from implementing different time settings for hibernation time, we can see its effect on the total recording time, the percentage of missed events, and the average power consumption. To get the most effecctive use of the proposed device, it must be capable of recording 100% of an individual's event. This is where scenario 4 showed the most effective use of hibernation time while saving approximately 49% of power consumption from the baseline.
-
 As for the 7th figure, this shows a 24-hour health moinitoring of a healthy person. By extracting the activity level and calculating the EWS, the RMSE threshold values are determined and the readjustment algorithm is executed. The three parameters: oxygen saturation; respiratory rate; and heart rate; play contributing factors on calculating RMSE. Each parameter has different trade-off rates in regards to sensitivity and being susceptible to noise. The edge layer then chooses the lowest sensor's current level to satisfy the RMSE threhold.
+
+For the table under experimentation section, from implementing different time settings for hibernation time, we can see its effect on the total recording time, the percentage of missed events, and the average power consumption. To get the most effecctive use of the proposed device, it must be capable of recording 100% of an individual's event. This is where scenario 4 showed the most effective use of hibernation time while saving approximately 49% of power consumption from the baseline.
 
 The lowest RMSE values is given for high-level physical activity, where "running" and "jogging" states are 2.931 and 1.431, respectively. Even if the maximum current level is used, it can't improve the accuracy of the sensor over a certain threshold. While implementing scenario 4 for hibernation timing, high-level activity and/or a high EWS resets the hibernating time of the sensor to zero, and the lower-level activities and/or normal EWS prolonged the hibernation duration. In addition, based on the performance of the edge controller, the sensor was able to save 49% of the battery power for the case study.
 
