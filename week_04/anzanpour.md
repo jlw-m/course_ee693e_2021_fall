@@ -22,15 +22,15 @@ Internet of Things (Iot)  are key techonologies to remote health monitoring appl
 ***
 ## Review
 ### Strengths
-- Edge-assisted technology dynamically control sensor settings according to user's status
-- Edge controller is energy effectve, capable of saving 49% of battery power
-- Edge computing helps to implement author's idea without imposing computation overhead to the sensor layer while providing quick response at the edge layer
-- The device, while undergoing hibernation, is effectively capable of recording all events from the user
+- Edge-assisted technology dynamically control sensor settings according to user's status.
+- Edge controller is energy effectve, capable of saving 49% of battery power.
+- Edge computing helps to implement author's idea without imposing computation overhead to the sensor layer while providing quick response at the edge layer.
+- The device, while undergoing hibernation, is effectively capable of recording all events from the user.
 
 ### Weaknesses
-- Data transfer bandwidth takes up a lot of energy consumption
-- Temperature sensor may be affected by ambient temperature of the hand while the device is in the glove (e.g. prespiration)
-- PPG signal is vulnerable to body movements
+- Data transfer bandwidth takes up a lot of energy consumption.
+- Temperature sensor may be affected by ambient temperature of the hand while the device is in the glove (e.g. prespiration).
+- PPG signal is vulnerable to body movements.
 
 ### Detailed Comments
 The paper contributes in designing an edge-based remote health monitoring architecture in out-of-hospital settings with a reconfigurable sensor node for Early Warning Score (EWS) assessment. The Edge-assisted technology dynamically controls sensor settings according to the user's status and their activity. A real-time adaptation of the sensing parameters is made possible through a runtime control algorithm state machine residing at the edge layer. One of the major strengths of the proposed architecture is the optimization approach to reduce the energy consumption of a sensor node with target accuracy of extracted parameters. Choosing edge computing helped the authors to implement their idea without imposing computation overhead to the sensor layer while providing quick response at the edge layer which helps to implement an efficient IoT architecture. 
