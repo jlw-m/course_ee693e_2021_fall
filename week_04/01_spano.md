@@ -61,10 +61,13 @@ The gateway collects data from multiple sensors and encapsulates raw sensor data
 
 ### Audience Questions
 1. While using the device, does a patient's physical activity (e.g. running, standing still, etc.) affect the magnitude of the ECG signal (i.e. mV to V)?
+
 The patient’s physical activity does affect the signal reading, but not in terms of changing order of magnitudes. The paper states that the peak-to-peak amplitude is approximately around 1 mV but can reach up to 3 mV. So, an amplitude reading in V magnitude does not look like a possibility. Another reason for this affect is motion artifacts (including respiration and body movements) and a poor skin-electrode contact can generate an additional large low frequency offset (±300 mV) that can cause baseline wander.
 
 2. Can this wearable ECG monitoring system detect "Arrythmias (problem in heart rythm/missing or irregular heartbeat)"?
+
 There was no official testing done to see how this device performs in Arrythmias detection, but based on the information provided we can make an educated guess. The ECG signal provides a clearly identifiable reading of the QRS Complex, the P and T waves, and the ST segment. These are all important information used in identifying Arrythmias, the only requirement would be to collect the data over enough amount of time. Another note that this paper focus on developing a high signal quality and low power consumption, so detection any health problems was not mentioned and simply output the graph signals through web interface.
 
 3. What do you think should be improved in the system/experiment?
+
 Future testing of the system will be required to evaluate, among other things, the signal quality and range capabilities of the system in order to ensure that it remains operational. Examine the processes followed by the information-processing server in order to guarantee the security and reliability of the server's operation.
