@@ -43,9 +43,9 @@ A case study is being conducted to develop and implement an In Vivo active press
 ### Experimentation
 {{< figure src="https://raw.githubusercontent.com/gustybear-teaching/course_ee693e_2021_fall/main/week_02/images/Drift_Tolerance_Analysis.png" title="Drift Tolarence Analysis" width="300" >}}
 
-{{< figure src="https://raw.githubusercontent.com/gustybear-teaching/course_ee693e_2021_fall/main/week_02/images/In_Vivo_Pressures.PNG" title="In Vivo Pressures" width="300" >}}
+{{< figure src="https://raw.githubusercontent.com/gustybear-teaching/course_ee693e_2021_fall/main/week_02/images/In_Vivo_Pressures.png" title="In Vivo Pressures" width="300" >}}
 
-{{< figure src="https://raw.githubusercontent.com/gustybear-teaching/course_ee693e_2021_fall/main/week_02/images/Detrusor_Pressure.PNG" title="Detrusor Pressure" width="300" >}}
+{{< figure src="https://raw.githubusercontent.com/gustybear-teaching/course_ee693e_2021_fall/main/week_02/images/Detrusor_Pressure.png" title="Detrusor Pressure" width="300" >}}
 
 ### Discussion
 As mentioned under experimentation section, from the table we can see the results of one of the dry-lab experiments to explore which frequency and duty cycle combination would minimize the drift that was found in the signal during the pressure sensor characterization tests. It was found that a frequency of 50k along with a duty cycle of 20 gave the best results with a drift rate which was able to last 800+ hours before reaching 10% drift.
