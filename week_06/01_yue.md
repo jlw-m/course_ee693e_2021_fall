@@ -1,12 +1,12 @@
 ---
-title: "01: Clicktok: Click Fraud Detection using Traffic Analysis
-Shishir Nagaraja, Ryan Shah"
-date: 2021-08-30
+title: "01: Extracting Multi-Person Respiration from Entagnled RF Signals
+Shichao Yue, Hao He, Hao Wang, Hariharan Rahul, Dina Katabi"
+date: 2021-09-27
 type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): Alvin Yang, Thomas Yang"
+summary: "Presenter(s): Saige Dacuycuy, Tasmia Tahmid, Beemnet Alemayehu"
 
 # Provide other tags that describe the paper
 tags:
