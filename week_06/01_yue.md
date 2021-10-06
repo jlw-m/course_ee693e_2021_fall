@@ -66,6 +66,11 @@ When applying the active defense with bait clicks, it can be seen in Table 3, th
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
 Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
+### Discussion
+Ground truth measurement is established by strapping a belt around the chest and using the change in chest volume to get breathing signal. This ground truth will serve as the standard in which we compare DeepBreath’s performance against. To establish a contextual understanding of this comparison, a belt strapped to the diaphragm was compared to a belt strapped to the chest. In an ideal world the correlation would have been one (as we would expect DeepBreath’s correlation to be as well), but the data showed a correlation of 0.915. This sets the standard for DeepBreath to match. 
+Thirteen couples participated in the study. Each couple were assigned near subject and far subject identification based on their distance from the sensor. To measure the ground truth, everyone wore a chest belt. During the data collection, the motion detector was used to remove periods of motion and only operated on stable periods. Data analysis showed, on average, 11% of a night exhibits motion which agrees with medical literature.
+Data collected over 21 nights to measure the identity matching of DeepBreath has an average accuracy of 99.1% and all subjects had an accuracy of above 95%. The breathing separation of multiple people with minimum distance between them was measure using five people sitting on a couch shoulder-to-shoulder. There were 8 different people who participated in different combinations of five subjects. Each trial lasted five minutes and the correlation between DeepBreath’s signal and the ground truth had an average of 0.922. 
+
 ### Audience Questions
 1.	Can multiple reflections be made to reach the person without too much noise?
 
