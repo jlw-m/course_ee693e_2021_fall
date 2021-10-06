@@ -17,7 +17,7 @@ tags:
 
 ***
 ## Paper Summary
-This paper delves into the creation and testing of a new protocol, Clicktok, in an attempt to detect fraudulent clicks from real clicks where ad companies may pay money per click on their ads. There are various attack methods used to generate these clicks whether it comes from a bot farm, or from malicious apps installed on a normal user's device, detecting inorganic clicks from organic clicks is a concern to prevent adversaries from profiting off from ad companies. Clicktok attempts to classify these clicks by utilizing the fact that fake generated click spam imitates user traffic in an attempt to stay stealthy. By analyzing repeating patterns in a user's click history, Clicktok aims to identify these false clicks from real clicks.
+RF signals have been used to track a person’s respiration allowing us to track the sleep quality and stages of a subject and monitor sleep apnea and other sleep disordered breathing without any body contact. However, this approach as is cannot be easily integrated into people’s daily lives because it does not work when other people are present in the vicinity of the subject (which is almost all the time). In this paper, a solution is presented where the multiple RF signal interference is modeled, and independent component analysis (ICA) is used to recover individual signals. The proposed method can attribute each signal to the source subject with very high accuracy and precision, and the distance and position of the subjects does not affect the data quality.
 ***
 
 ## Presentation
@@ -27,12 +27,11 @@ This paper delves into the creation and testing of a new protocol, Clicktok, in 
 
 ## Review
 ### Strengths
-- This paper offers a method of detecting fraudulent clicks that does not rely on a threshold based defense.
-- By taking advantage that click fraud often uses previous user traffic in order to fabricate fake clicks, Clicktok is able to identify click fraud even though the attacker may be imitating organic clicks.
+- Accuracy does not decrease with the number of people.
+- System design can apply to different applications beside respiration monitoring.
 
 ### Weaknesses
-- Although Clicktok seems promising in detecting fraudulent clicks at various rates of attack, it seem it may be possible for an adversary to create a method that is able to bypass Clicktok's detection system.
-- It may be difficult to keep track of malicious clicks with IP aggregation and churn. As some networks may try to avoid exposing IP addresses, it makes attributing fraudulent clicks to a certain source more difficult.
+- Cannot model objects in motion.
 
 ### Detailed Comments
 By detecting the timing characteristics of click traffic feed received at ad networks, one can detect fraudulent clicks that attempt to be stealthy by sending a low amount of clicks. This is useful as farming clicks is becoming more economical with advances in technology, meaning that more attackers can have the luxury of sending a low amount of fraudulent clicks in an attempt to not be flagged as fake. Then even with a wide range of rates which an attacker can send fake clicks, whether the adversary decides to imitate previous user clicks or generate random clicks, Clicktok is able to identify repeating patterns of the imitation clicks, or the randomness of the clicks as not being attributed to real clicks.
@@ -67,27 +66,19 @@ When applying the active defense with bait clicks, it can be seen in Table 3, th
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
 Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
-##Audience Questions
-What are the causes of a synch error, factors, reasons?
-The causes of synch error may be slight differences in recorded time stamps with the data, or perhaps duplicated user clicks that may happen from errors in the user's app/browser. This might lead into false transmissions.
+### Audience Questions
+1.	Can multiple reflections be made to reach the person without too much noise?
 
-Clicktok outperforms its competitors when analyzing low rate attacks, what is the differences it has over them?
-The difference is that Clicktok is able to identify patterns where a malicious app may try to replay user clicks. So it would then be able to determine through a low rate attack if the clicks produced by the low rate is fraudulent.
 
-What are the limitations of using threshold based approaches?
-The limitations of threshold based approaches is that with how economical setting up click farms is now, adversaries can now attack with sending clicks under the threshold and still be able to profit.
+2.	Are there any security risks in gathering data from this technology?
+The source data (subject’s breathing) is available in the open out there without any privacy. So, any party with an antenna can pick up these breathing signals and use the similar model to get the information. However, I am not sure if this lies under privacy issue or security because the weak point here is before the data collection. This vulnerability exists before the system is used or even implemented.
+	
+3.	What is the cost of the FMCW system in comparison to a WIFI system?
 
-The paper states that "the mimicry defense detects around 81% of fake clicks in stealthy (low rate) attacks... What about high rate attacks?"
-With high rate attacks, the mimicry defense is actually even better at around 99% true positive rate for a 12 week duration with Google's ad network.
 
-In the passive setup, the authors only demonstrated that their method works for the dataset they choose. Why can't the attacker produce click pattern that is statistically indistinguishable with real click? (i.e. an adversary attacker)
-The attacker could potentially produce a click pattern that is similar to a user, but the paper focuses on malicious apps that replay user's clicks, or that uses a random/fixed interval delay to send clicks. A malicious app might require more resources to send fraudulent clicks.
+4.	 What is the system's performance when dealing with moving objects?
+Moving objects are hard to model. ICA, which is the main method this system is based on cannot separate and identify the signals off an object in motion.
 
-Why active defense improves detection rates better than passive defense?
-An active defense improves detection rates, as the bait clicks allow the defense algorithm to detect whether malicious apps are replaying the bait clicks as the bait clicks are sent with known intervals, making detection of replayed clicks better.
+5. 	There was an experiment with 5 individuals and DeepBreath could reconstruct the breathing of each subject. Do you believe the system could function effectively with a fan near the subject?
+Yes, the fan can be considered like another subject. The system handles interference really well, so having an additional source of signal should not be a problem for the analysis.
 
-How would a machine learning algorithm specifically designed to mimic click patterns of humans, be able to break the algorithm?
-It would probably be able to break this algorithm as this method looks for patterns in clicking and then the variance of these clicks to determine true from false clicks. So a machine learning algorithm may be able to produce similar click patterns that defeat both detection methods. With that said, it may then result in future methods of using machine learning to then detect fake clicks.
-
-Do you think there are other factors, in addition to time patterns/properties, that can help to verify authentic click traffic to further increase the accuracy of the proposed technique(s)?
-There may be other factors such as location of the IP being considered where the time in the location where a click is received might give clues as to whether the click is genuine. Other factors may also include, device type, operating system, etc., as click farms might have similar configurations.
