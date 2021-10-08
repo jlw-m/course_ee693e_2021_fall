@@ -42,13 +42,13 @@ Once the smartphone application is registered as a 2FA device, the flow of authe
 
 
 ### Experimentation
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment1.jpg" title="Experiment Setup." width="300" >}}
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment2.jpg" title="Experiment Positions to test." width="300" >}}
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-UI.jpg" title="FullBreathe Web UI." width="300" >}}
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-results.jpg" title="Amplitude and Phase signals in different antenna positions." width="300" >}}
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-LoSresults.jpg" title="Impact of different Line of Sight between tranceivers." width="300" >}}
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-envresults.jpg" title="Impact of different environments." width="300" >}}
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-fridgeresults.jpg" title="Impact of different environmental changes." width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment1.jpg" title="Experiment Setup." width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment2.jpg" title="Experiment Positions to test." width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-UI.jpg" title="FullBreathe Web UI." width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-results.jpg" title="Amplitude and Phase signals in different antenna positions." width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-LoSresults.jpg" title="Impact of different Line of Sight between tranceivers." width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-envresults.jpg" title="Impact of different environments." width="300" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-fridgeresults.jpg" title="Impact of different environmental changes." width="300" >}}
 
 ### Discussion
 <!-- As we can see from the first figure, we can see all of the variations in timings that 2FA-PP observes, whether it being a normal login, to a phishing attack which modifies the obfuscated code. Although phishing attacks are able to successfully modify the obfuscated code, the round trip and modification takes a considerable amount of time, where we can set our threshold to contain the vast majority of our baseline timing, while preventing a majority of phishing attacks.
