@@ -15,20 +15,21 @@ tags:
 ---
 ***
 ## Paper Summary
-
+Wireless human respiration decection using WiFi signals has a great potential in the teledemedicince field. This research tackles the wireless sensing problem by investigating the properties of amplitude and phase information on WiFi signals. The discovery of the phase and amplitude complementarity property is used to solve the blind spot problem. This paper also evaluates the complementarity in the respiration sensing application. The result of the experimentations shows that the complementarity property still holds in different factors such as environmental changes, and tranceivers distance. 
 ***
 ## Presentation
 {{< youtube zNiE1SjCCWM >}}
 ***
 ## Review
 ### Strengths
-- f
-- 
+- Can detect wireless measurements in undetectable regions.
+- Accurate measurements in different environments.
 
 ### Weaknesses
-- 
-- f
-- 
+- This application is only for one subject.
+- This application might not be accurate when the subject is moving.
+- Subject must be facing the transceivers for accurate measurements.
+
 ### Detailed Comments
 <!-- 2FA-PP is a novel 2FA scheme which helps mitigate phishing attacks. Although it has a poor time preventing phishing attacks on the same network, with an attacker success rate having a worse case scenario of 35% success rate if not tuned correctly, it is more than likely that the phishing attack will occur from a proxy server, moving its location far from the user, meaning it would be able to prevent a majority of phishing attacks. Since 2FA-PP only requires the user to set up an application and the server to set up a database to handle interactions with the application, it is a user friendly scheme which is easy to implement into existing structures, using current generation browser APIs to communicate with the phone’s BLE, which is readily available to a majority of users who use 2FA. Some worries for 2FA-PP stems from the use of the browser’s API to communicate with BLE, as this can be a vector for attack by the phishing user where they can take over communication and report a real domain as opposed to the phishing domain, but this is circumvented by the use of obfuscation techniques, such that the report of the domain will be unobfuscated in a certain way, preventing a phishing user from figuring out and using this obfuscation technique within the given time frame. -->
 
@@ -39,12 +40,15 @@ Although these are the two main components to be implemented, there are also som
 
 Once the smartphone application is registered as a 2FA device, the flow of authentication is as follows. When a client logs into the server, the server will request the 2FA device, or smartphone in our case, a token. To get this token, a challenge is sent in a form of a JavaScript file, which is encrypted with a key which only the server and smartphone have. The smartphone knows the answer to this JavaScript file, which is used to verify the URL. Once the smartphone sends the decryption key to the client, it will start a timer, where the browser will execute the JavaScript file to unobfuscate the ciphertext it contains. The obfuscation process contains references to the legitimate URL, which is obtained through the browser’s reference to the URL, window.location, which cannot be modified by a phishing user. Once the challenge is completed, the answer is sent to the smartphone for verification. If correct and within the timing threshold, the smartphone will send the token to verify the login. -->
 
+
 ### Experimentation
-<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/responsetime.jpg" title="Response Time" width="300" >}}
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/successrate.jpg" title="Success Rate with One Round" width="300" >}}
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/multipleattempts.jpg" title="Success Rate with Multiple Rounds" width="300" >}} -->
+<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment1.jpg" title="Experiment Setup." width="300" >}}
+<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment2.jpg" title="Experiment Positions to test." width="300" >}}
+<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-UI.jpg" title="FullBreathe Web UI." width="300" >}}
+<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-results.jpg" title="Amplitude and Phase signals in different antenna positions." width="300" >}}
+<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-LoSresults.jpg" title="Impact of different Line of Sight between tranceivers." width="300" >}}
+<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-envresults.jpg" title="Impact of different environments." width="300" >}}
+<!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-fridgeresults.jpg" title="Impact of different environmental changes." width="300" >}}
 
 ### Discussion
 <!-- As we can see from the first figure, we can see all of the variations in timings that 2FA-PP observes, whether it being a normal login, to a phishing attack which modifies the obfuscated code. Although phishing attacks are able to successfully modify the obfuscated code, the round trip and modification takes a considerable amount of time, where we can set our threshold to contain the vast majority of our baseline timing, while preventing a majority of phishing attacks.
