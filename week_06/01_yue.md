@@ -62,7 +62,7 @@ The authors compare the performance of DeepBreath with a baseline that uses an o
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/Fig12_Yue.png" title="Examples of recovered breathing signals and the original ground truth signals from the breathing belt" width="320" >}}
 In this figure, DeepBreath is capable of separating respiration signals from couples even when the breathing patterns look similar. 
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/Fig15_Yue.png" title="Table 3: Active Defense" width="320" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/Fig15_Yue.png" title="Obersvations of five subjects and a comparison between reconstructed signals and ground truth" width="320" >}}
 The authors shows DeepBreath's performance by observing the voxels centered on each of the five subjects. Each observation is a different mixture of the breathing signals. The authors also do a comparison of DeepBreath's reconstructed signal and compare it to the ground truth, showing the system's degree of accuracy.
 
 
