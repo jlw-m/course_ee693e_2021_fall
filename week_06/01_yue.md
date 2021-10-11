@@ -28,6 +28,7 @@ This paper presents the first RF-based respiration monitoring system called “D
 
 ## Review
 ### Strengths
+- All previous studies demonstrate accurate monitoring of a single person’s breathing but this paper focuses on multiple persons breathing with sucessfull experimentation results. 
 - Accuracy does not decrease with the number of people.
 - System design can apply to different applications beside respiration monitoring.
 
