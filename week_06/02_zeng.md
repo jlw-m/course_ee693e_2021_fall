@@ -15,7 +15,7 @@ tags:
 ---
 ***
 ## Paper Summary
-Wireless human respiration decection using WiFi signals has a great potential in the teledemedicince field. This research tackles the wireless sensing problem by investigating the properties of amplitude and phase information on WiFi signals. The discovery of the phase and amplitude complementarity property is used to solve the blind spot problem. This paper also evaluates the complementarity in the respiration sensing application. The result of the experimentations shows that the complementarity property still holds in different factors such as environmental changes, and tranceivers distance. 
+Wireless human respiration detection using WiFi signals has a great potential in the telemedicine field. This research tackles the wireless sensing problem by investigating the properties of amplitude and phase information on WiFi signals. The discovery of the phase and amplitude complementarity property is used to solve the blind spot problem. This paper also evaluates the complementarity in the respiration sensing application. The result of the experimentations shows that the complementarity property still holds in different factors such as environmental changes, and transceiver distance. 
 ***
 ## Presentation
 {{< youtube zNiE1SjCCWM >}}
@@ -39,7 +39,6 @@ To overcome this problem, use multiple transceiver pairs to improve the ability 
 
 The superposition of components from all the paths a radio wave takes is referred to as CSI. They investigate how to combine CSI phase and amplitude information to detect complete respiration. The CSI phase is primarily determined by sin, and the CSI phase waveform is sinusoidal-like.
 
-
 The metal plate moves 5mm back and forth regularly, recording the CSI data. A waveform is considered detectable for respiration if it is a (co)sinusoidal-like waveform with clear periodic patterns that correspond to the ground truth. As long as they can obtain accurate CSI, the CSI phase and amplitude complementarity can be used to build a respiration detection system. MIMO technology is used to extend the complementarity property to standard WiFi. Extend the Complementarity to the WiFi Commodity.
 
 The time-varying random phase offsets on a WiFi card are the same across all antennas. They recover them by performing conjugate multiplication (CM) of CSI between two antennas to remove time-varying random phase offsets. Because the two nearby antennas have a similar reflection path, the change in reflection path length can be seen as the same during respiration.
@@ -57,6 +56,9 @@ However, if both the phase and amplitude of CM are used, all CSI measurements ar
 They can identify the two streams to determine subjects by leveraging the WiFi CSI phase and amplitude nature. During respiration detection, the system requires the issue to remain still. FullBreathe fails to detect respiration from WiFi signals because significant body movement affects chest movement the most. The limitation is caused by multipath effects caused by other body parts.
 
 ### Implementation
+There were two cases of Fresnel zones tested for respiration sensing in order to verify complementarity: near region and far region. The setup consisted of the two transceivers with 150cm separation, the use of a WARP platform as a programmable wireless platform, and a metal plate mounted onto a high precision THK programmable linear motion slider meant to mimic chest displacement. Each artificial breath corresponded to a 5 mm displacement of the metal plate. For both cases, many data points were taken in 0.5 mm increments throughout a set moving range.
+The observations from this experimental setup were as expected and displayed alternating detectable and undetectable regions. The only difference between cases was the size of the detectable/undetectable regions due to the nature of Fresnel zones becoming smaller as the distance from the transceivers increases. In each position, amplitude, phase, or both signals were detectable at any given moment.
+
 
 ### Experimentation
  {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment1.jpg" title="Experiment Setup." width="300" >}}
@@ -68,10 +70,14 @@ They can identify the two streams to determine subjects by leveraging the WiFi C
  {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-fridgeresults.jpg" title="Impact of different environmental changes." width="300" >}}
 
 ### Dicussions
+Based on the FullBreathe research results, the complementarity property between the phase and the amplitude still holds when the tranceiver LoS is varied, the rooms are changed, and there was an environmental changes. This indicates that any of these factors is not a problem when detecting respiration measurements. However, several limitations are discussed on the paper. Since this proposal is for one subject, it is likely to not work for multiple subjects. But, there are possible solutions to tackle this problem, which is out of the scope of this paper. Another limitation is the subject orientation when detecting the measurements. This expirement only worked accurately when the subject is facing forward. One possible solutions to this problem is to add another tranceiver to the room in order so sense the person's respisrations in different angles. 
+
 
 ### Questions
 (1) Can you elaborate the reason why subject location and environmental changes does not affect the complimentary of CSI phase and amplitude?
 
+A subject's location affects both the magnitude and phase of the dynamic component so as long as the subject is within sensing range, the magnitude will be larger than zero and detectable. As for the antenna displacement and room layout, they affect the distribution of the multi-paths, which change the static component. Both changes of static and dynamic components only affect the selection between phase and amplitude for respiration sensing but not their complementarity.
+ 
 (2) Is there any possible way to increase/improve the respiratory sensing range? 
 
 The respiratory sensing rage is very accurate if the subject is facing in front of the tranceivers, staying still, and in the detectable sensing range.
