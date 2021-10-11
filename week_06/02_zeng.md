@@ -61,19 +61,19 @@ The observations from this experimental setup were as expected and displayed alt
 
 
 ### Experimentation
- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment1.jpg" title="Experiment Setup." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/zeng-experiment1.jpg" title="Experiment Setup." width="300" >}}
  
- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment2.jpg" title="Experiment Positions to test." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/zeng-experiment2.jpg" title="Experiment Positions to test." width="300" >}}
  
- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-UI.jpg" title="FullBreathe Web UI." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/zeng-UI.jpg" title="FullBreathe Web UI." width="300" >}}
  
- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-results.jpg" title="Amplitude and Phase signals in different antenna positions." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/zeng-results.jpg" title="Amplitude and Phase signals in different antenna positions." width="300" >}}
  
- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-LoSresults.jpg" title="Impact of different Line of Sight between tranceivers." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/zeng-LoSresults.jpg" title="Impact of different Line of Sight between tranceivers." width="300" >}}
  
- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-envresults.jpg" title="Impact of different environments." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/zeng-envresults.jpg" title="Impact of different environments." width="300" >}}
  
- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-fridgeresults.jpg" title="Impact of different environmental changes." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/zeng-fridgeresults.jpg" title="Impact of different environmental changes." width="300" >}}
 
 ### Dicussions
 Based on the FullBreathe research results, the complementarity property between the phase and the amplitude still holds when the tranceiver LoS is varied, the rooms are changed, and there was an environmental changes. This indicates that any of these factors is not a problem when detecting respiration measurements. However, several limitations are discussed on the paper. Since this proposal is for one subject, it is likely to not work for multiple subjects. But, there are possible solutions to tackle this problem, which is out of the scope of this paper. Another limitation is the subject orientation when detecting the measurements. This expirement only worked accurately when the subject is facing forward. One possible solutions to this problem is to add another tranceiver to the room in order so sense the person's respisrations in different angles. 
