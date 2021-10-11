@@ -74,16 +74,21 @@ Data collected over 21 nights to measure the identity matching of DeepBreath has
 ### Audience Questions
 1.	Can multiple reflections be made to reach the person without too much noise?
 
+For wireless settings, the multiple reflections caused by different angles matters. We believe that manipulating the environment can create artificial reflections. In previous presentation(s), there was a manipulation of moving metal plates to simulate chest displacement, so we assume that the multiple paths can be made. 
 
 2.	Are there any security risks in gathering data from this technology?
-The source data (subject’s breathing) is available in the open out there without any privacy. So, any party with an antenna can pick up these breathing signals and use the similar model to get the information. However, I am not sure if this lies under privacy issue or security because the weak point here is before the data collection. This vulnerability exists before the system is used or even implemented.
+
+The source data (subject’s breathing) is available in the open out there without any privacy. So, any party with an antenna can pick up these breathing signals and use the similar model to get the information. However, we are not sure if this lies under privacy issue or security because the weak point here is before the data collection. This vulnerability exists before the system is used or even implemented.
 	
 3.	What is the cost of the FMCW system in comparison to a WIFI system?
 
+It depends on the application and implementation, but in regards to radar systems, WIFI has a relatively narrow bandwidth compared to the tailor-made transmissions in FMCW. So right now, WIFI can still be cheaper. However, we believe that with the recent advances in low-cost FMCW technology, it is possible that FMCW can be cheaper than WIFI in the application of multipath reflections.
 
 4.	 What is the system's performance when dealing with moving objects?
+
 Moving objects are hard to model. ICA, which is the main method this system is based on cannot separate and identify the signals off an object in motion.
 
 5. 	There was an experiment with 5 individuals and DeepBreath could reconstruct the breathing of each subject. Do you believe the system could function effectively with a fan near the subject?
+
 Yes, the fan can be considered like another subject. The system handles interference really well, so having an additional source of signal should not be a problem for the analysis.
 
