@@ -56,6 +56,18 @@ However, if both the phase and amplitude of CM are used, all CSI measurements ar
 
 They can identify the two streams to determine subjects by leveraging the WiFi CSI phase and amplitude nature. During respiration detection, the system requires the issue to remain still. FullBreathe fails to detect respiration from WiFi signals because significant body movement affects chest movement the most. The limitation is caused by multipath effects caused by other body parts.
 
+### Implementation
+
+### Experimentation
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment1.jpg" title="Experiment Setup." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-experiment2.jpg" title="Experiment Positions to test." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-UI.jpg" title="FullBreathe Web UI." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-results.jpg" title="Amplitude and Phase signals in different antenna positions." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-LoSresults.jpg" title="Impact of different Line of Sight between tranceivers." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-envresults.jpg" title="Impact of different environments." width="300" >}}
+ {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/week_06/images/zeng-fridgeresults.jpg" title="Impact of different environmental changes." width="300" >}}
+
+### Dicussions
 
 ### Questions
 (1) Can you elaborate the reason why subject location and environmental changes does not affect the complimentary of CSI phase and amplitude?
