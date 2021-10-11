@@ -56,6 +56,11 @@ However, if both the phase and amplitude of CM are used, all CSI measurements ar
 
 They can identify the two streams to determine subjects by leveraging the WiFi CSI phase and amplitude nature. During respiration detection, the system requires the issue to remain still. FullBreathe fails to detect respiration from WiFi signals because significant body movement affects chest movement the most. The limitation is caused by multipath effects caused by other body parts.
 
+###Implementation
+
+###Experimentation
+
+###**Discussion
 
 ### Questions
 (1) Can you elaborate the reason why subject location and environmental changes does not affect the complimentary of CSI phase and amplitude?
