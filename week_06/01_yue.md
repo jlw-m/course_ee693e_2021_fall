@@ -56,17 +56,15 @@ The authors used Deepbreath, which is the first RF-based full night breathing re
 
 ### Experimentation
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable1.png" title="Table 1: Passive Detection" width="320" >}}
-In their experimentation, they consider *stealthy* attackers to be under 5 clicks a day per device, *sparse* to be 5-15 clicks, and *firehose* to be over 15 clicks. From Table 1, it can be seen that Clicktok with a passive defense is effective in identifying click fraud. With a longer ad network duration, leads to better inference, especially against stealth attacks.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/Fig11_Yue.png" title="Performance comparison between DeepBreath and an oracle-based baseline" width="320" >}}
+The authors compare the performance of DeepBreath with a baseline that uses an oracle to iterate over all voxels in the bed area. For each person, the oracle zooms in on the voxel that results in more accurate breathing signals. 
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable2.png" title="Table 2: Detection Across Multiple Clickstreams" width="320" >}}
-They also categorized and analyzed different click categories, where sponsored are advertisements displayed by search engines, contextual are ads displayed on a webpage based on keywords present in the webpage, and mobile are ads exclusively present on mobile devices. From the results in Table 2, it is shown that the Clicktok is able to identify fraudulent clicks across the ad categories at a high true positive rate of ~90%, and a low false positive rate at around ~0.004%.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/Fig12_Yue.png" title="Examples of recovered breathing signals and the original ground truth signals from the breathing belt" width="320" >}}
+In this figure, DeepBreath is capable of separating respiration signals from couples even when the breathing patterns look similar. 
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable3.png" title="Table 3: Active Defense" width="320" >}}
-When applying the active defense with bait clicks, it can be seen in Table 3, that it improves detection rates. With both the increase in true positive rates, and decrease in false positive rates, show that an active defense may be important in identifying fake clicks.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/Fig15_Yue.png" title="Table 3: Active Defense" width="320" >}}
+The authors shows DeepBreath's performance by observing the voxels centered on each of the five subjects. Each observation is a different mixture of the breathing signals. The authors also do a comparison of DeepBreath's reconstructed signal and compare it to the ground truth, showing the system's degree of accuracy.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
-Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
 ### Discussion
 Ground truth measurement is established by strapping a belt around the chest and using the change in chest volume to get breathing signal. This ground truth will serve as the standard in which we compare DeepBreath’s performance against. To establish a contextual understanding of this comparison, a belt strapped to the diaphragm was compared to a belt strapped to the chest. In an ideal world the correlation would have been one (as we would expect DeepBreath’s correlation to be as well), but the data showed a correlation of 0.915. This sets the standard for DeepBreath to match. 
