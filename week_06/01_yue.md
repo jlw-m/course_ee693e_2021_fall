@@ -34,25 +34,27 @@ RF signals have been used to track a person’s respiration allowing us to track
 - Cannot model objects in motion.
 
 ### Detailed Comments
-By detecting the timing characteristics of click traffic feed received at ad networks, one can detect fraudulent clicks that attempt to be stealthy by sending a low amount of clicks. This is useful as farming clicks is becoming more economical with advances in technology, meaning that more attackers can have the luxury of sending a low amount of fraudulent clicks in an attempt to not be flagged as fake. Then even with a wide range of rates which an attacker can send fake clicks, whether the adversary decides to imitate previous user clicks or generate random clicks, Clicktok is able to identify repeating patterns of the imitation clicks, or the randomness of the clicks as not being attributed to real clicks.
-
-As for the potential weakness in Clicktok, a more advanced click randomization/generation scheme may make detecting fraudulent clicks from real organic clicks difficult. If an attacker is able to uncover how Clicktok determines fraudulent clicks, they may be able to generate a workaround towards Clicktok's defenses. Then addressing the IP aggregation and churn, as some networks may aggregate IPs, it makes identifying individual user's clicks all the more difficult which would result in a lower efficacy when identifying false clicks.
-
-### Implementation
 The paper provides an explanation into how the authors separate the mixtures of RF breathing signals. The concept of Independent Component Analysis (ICA) helps us recognize signals from multiple sources, analyze the mixture, and split the signals apart. The goal of ICA is to recover the sources and the mixing matrix given only the observations. In simplicity, the RF signals reflect off people's bodies add up linearly over the wireless medium. However, there is a fundamental challenge when using this technique, and it's due to the fact that the mixing matrix is not the same at every time instance. 
 
 The problem that the author's have is that the RF signals are reflected off each person's torso. The mixtures of the reflections are recieved by the antennas and the mixing coefficients is dependent on the wireless channels of the torso of each person to each antenna. There is a sensitive matter. Once a person breathes, their torso moves and the channels change and the mixing coefficients are no longer constant. This means that the mixing matrix is pretty much dependent on time, which is very difficult to determine from your observations.
 
-So the RF reflections are analyzed via a Frequency-Modulated Carrier Waves (FMCW) radio. FMCW transmits a sequence of sweeps, and during each sweep, the frequency of the transmitted signal changes linearly with time. As shown below, the linear change of the transmitted signal is shown in red. Once the signal is reflected off the human body, it is given as a time-shifted blue signal. In This case, it also compares the frequency difference between the transmitted signal and received signal.
+### Implementation
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokSystemPartitioning.png" title="" width="300" >}}
+So the RF reflections are analyzed via a Frequency-Modulated Carrier Waves (FMCW) radio. FMCW transmits a sequence of sweeps, and during each sweep, the frequency of the transmitted signal changes linearly with time. As shown below, the linear change of the transmitted signal is shown in red. Once the signal is reflected off the human body, it is given as a time-shifted blue signal. In this case, it also compares the frequency difference between the transmitted signal and received signal.
 
-Afterwards by examining the weight matrix, they can determine which patterns are repeated and are potentially fraudulent clicks, as patterns matrices that are repeated can be attributed to organic click spam (fake clicks imitating user inputs). They cluster the closely related patterns matrices, to then determine inorganic click spam by finding clusters with a higher entropy, characteristic of clicks generated from a randomized/constant time offsets. The remaining clicks can then be attributed to real users.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/FMCW.png" title="" width="300" >}}
 
-Another technique Clicktok applies is bait clicks (active defense), where ad networks inject bait clicks, so any malicious users that may try to imitate these bait clicks are identified with Clicktok's algorithm and flagged as fraudulent.
+To alleviate the problems from before, the authors considered small linear motions involved with the breathing and substract the mean across time for each frequency, then they recover the individual breathing motions of all the sources. 
+
+The authors used Deepbreath, which is the first RF-based full night breathing reconstruction system that can accurately monitor multiple people even when they are in the same bed. Deepbreath runs on top of an FMCW radio with an antenna and captures the reflected signals of each person throughout an entire night observation. It does so by a three-step process:
+
+1) Motion Detection: The motion detection components takes in input observations, identifies motion intervals, and splits the observations in a series of stable periods. The idea is to detect the motion of a single individual and ignore other motions.
+
+2) Breathing Separation: This module processes the observations during each stable period to disentangle the breathing signals of different people. It outputs the reconstructed breathing signals during that period. After motion detection, ICA is applied to each periond and the breathing reconstructions is obtained. To make this work, the authors allowed multiple paths for the signal since it is related linearly to the breathing motion, and they considered the short periodicity of human breathing.
+
+3) Identity Matching: The breathing sepearation module is not aware who each reconstructed signal belongs to. So the authors compare ICA components from each period and go through consistency metric to see which ICA components corresponds to which person. The goal is to have an ICA component having the same order in all stable periods such that it gives the breathing of the same person. 
 
 ### Experimentation
-In order to evaluate Clicktok, the authors of the paper, used the click traffic obtained, filtered it and exposed it to a testbed with malicious apps and click malware. Through this they were able to get a click traffic that contained both legitimate and fake clicks.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable1.png" title="Table 1: Passive Detection" width="320" >}}
 In their experimentation, they consider *stealthy* attackers to be under 5 clicks a day per device, *sparse* to be 5-15 clicks, and *firehose* to be over 15 clicks. From Table 1, it can be seen that Clicktok with a passive defense is effective in identifying click fraud. With a longer ad network duration, leads to better inference, especially against stealth attacks.
