@@ -95,7 +95,7 @@ The source data (subject’s breathing) is available in the open out there witho
 	
 3.	What is the cost of the FMCW system in comparison to a WIFI system?
 
-It depends on the application and implementation, but in regards to radar systems, WIFI has a relatively narrow bandwidth compared to the tailor-made transmissions in FMCW. So right now, WIFI can still be cheaper. However, we believe that with the recent advances in low-cost FMCW technology, it is possible that FMCW can be cheaper than WIFI in the application of multipath reflections.
+The cost of such systems would be somewhere between $100 - $1000. It depends on the application and implementation, but in regards to radar systems, WIFI has a relatively narrow bandwidth compared to the tailor-made transmissions in FMCW. So right now, WIFI can still be cheaper. However, we believe that with the recent advances in low-cost FMCW technology for example Software Defined Radio, it is possible that FMCW can be cheaper than WIFI in the application of multipath reflections.
 
 4.	 What is the system's performance when dealing with moving objects?
 
