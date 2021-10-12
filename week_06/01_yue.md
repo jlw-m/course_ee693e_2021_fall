@@ -59,7 +59,7 @@ b) Breathing Separation: This module processes the observations during each stab
 
 c) Identity Matching: The breathing sepearation module is not aware who each reconstructed signal belongs to. So the authors compare ICA components from each period and go through consistency metric to see which ICA components corresponds to which person. The goal is to have an ICA component having the same order in all stable periods such that it gives the breathing of the same person. 
 
-
+The authors solved the signal blockage problem using a well-known phenomenon called multipath. To filter the noisy observations a term Long term Breathing-to-Noise Ratio (l-BNR) is defined and identified. If the l-BNR value is low, it indicates the possibility of the observation containing useful breathing information is low and hence it is not necessary to exclude such observations in recovering breathing signals.
 
 
 ### Experimentation
