@@ -99,9 +99,8 @@ The cost of such systems would be somewhere between $100 - $1000. It depends on 
 
 4.	 What is the system's performance when dealing with moving objects?
 
-Moving objects are hard to model. ICA, which is the main method this system is based on cannot separate and identify the signals off an object in motion.
+The authors futher research proposes to disentangle other types of motion, e.g., typing, or the simultaneous motion of two hands etc. apart from breathing separation. The current system is designed focusing on separating mixure of signals positioned in zero distance and thus moving objects might are hard to model in the existing system. The Inddependent Component Analysis (ICA) cannot separate and identify the signals off an object in motion.
 
 5. 	There was an experiment with 5 individuals and DeepBreath could reconstruct the breathing of each subject. Do you believe the system could function effectively with a fan near the subject?
 
-Yes, the fan can be considered like another subject. The system handles interference really well, so having an additional source of signal should not be a problem for the analysis.
-
+Yes, the systems could effectively fuctioned with a fan near the subject because DeepBreath uses a convolutional neural network to detect motion reliably  and the system is capable of identifing movements of the monitored people and ignore all irrelevant motion of a fan or the HVAC for example.
