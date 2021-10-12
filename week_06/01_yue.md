@@ -29,11 +29,14 @@ This paper presents the first RF-based respiration monitoring system called “D
 ## Review
 ### Strengths
 - All previous studies demonstrate accurate monitoring of a single person’s breathing but this paper focuses on multiple persons breathing with sucessfull experimentation results. 
-- Accuracy does not decrease with the number of people.
+- Average error in breating rate detection is very small (0.140 breaths per minute). 
+- DeepBreath can be scaled for more than two people and the accuracy does not decrease with the number of people.
 - System design can apply to different applications beside respiration monitoring.
 
 ### Weaknesses
 - Cannot model objects in motion.
+- The illustrative example used in the paper generates a false positive result as the Fourier transform is applied over a finite window it creats a sinc in the frequency domain and causes nearby signals to mix with each other due to the sinc tail. 
+
 
 ### Detailed Comments
 The paper provides an explanation into how the authors separate the mixtures of RF breathing signals. The concept of Independent Component Analysis (ICA) helps us recognize signals from multiple sources, analyze the mixture, and split the signals apart. The goal of ICA is to recover the sources and the mixing matrix given only the observations. In simplicity, the RF signals reflect off people's bodies add up linearly over the wireless medium. However, there is a fundamental challenge when using this technique, and it's due to the fact that the mixing matrix is not the same at every time instance. 
