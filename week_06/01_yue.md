@@ -28,7 +28,7 @@ This paper presents the first RF-based respiration monitoring system called “D
 
 ## Review
 ### Strengths
-- All previous studies demonstrate accurate monitoring of a single person’s breathing but this paper focuses on multiple persons breathing with sucessfull experimentation results. 
+- All previous studies demonstrate accurate monitoring of a single person’s breathing but this paper focuses on multiple persons breathing with sucessful experimentation results. 
 - Average error in breating rate detection is very small (0.140 breaths per minute). 
 - DeepBreath can be scaled for more than two people and the accuracy does not decrease with the number of people.
 - System design can apply to different applications beside respiration monitoring.
@@ -36,12 +36,13 @@ This paper presents the first RF-based respiration monitoring system called “D
 ### Weaknesses
 - The illustrative example used in the paper generates a false positive result as the Fourier transform is applied over a finite window it creats a sinc in the frequency domain and causes nearby signals to mix with each other due to the sinc tail. 
 - The current system cannot model objects in motion for example typing or the simultaneous motion of two hands.
+- The mixing matrix is pretty much dependent on time, which is very difficult to determine from visual observations.
 - Breathing separation trial was done for 5 mins. There is no solid evidence that the system/setup would give same results if the trial lasted longer than 5 minutes. 
 
 ### Detailed Comments
-The paper provides an explanation into how the authors separate the mixtures of RF breathing signals. The concept of Independent Component Analysis (ICA) helps us recognize signals from multiple sources, analyze the mixture, and split the signals apart. The goal of ICA is to recover the sources and the mixing matrix given only the observations. In simplicity, the RF signals reflect off people's bodies add up linearly over the wireless medium. However, there is a fundamental challenge when using this technique, and it's due to the fact that the mixing matrix is not the same at every time instance. 
+The paper provides an explanation into how the authors separate the mixtures of RF breathing signals and focuses on multiple persons breathing with sucessful experimentation results. The concept of Independent Component Analysis (ICA) helps us recognize signals from multiple sources, analyze the mixture, and split the signals apart. The goal of ICA is to recover the sources and the mixing matrix given only the observations. The proposed "DeepBreath" has some novel features like it can be scaled for more than two people and the accuracy does not decrease with the number of people. The average error in breating rate detection is 0.140 breaths per minute which is quite small. The system design can be applied to different applications beside respiration monitoring.
 
-The problem that the authors have is that the RF signals are reflected off each person's torso. The mixtures of the reflections are received by the antennas and the mixing coefficients is dependent on the wireless channels of the torso of each person to each antenna. There is a sensitive matter. Once a person breathes, their torso moves and the channels change and the mixing coefficients are no longer constant. This means that the mixing matrix is pretty much dependent on time, which is very difficult to determine from your observations.
+In simplicity, the RF signals reflect off people's bodies add up linearly over the wireless medium. However, there is a fundamental challenge when using this technique, and it's due to the fact that the mixing matrix is not the same at every time instance. The problem that the authors faced is that the RF signals are reflected off each person's torso. The mixtures of the reflections are received by the antennas and the mixing coefficients is dependent on the wireless channels of the torso of each person to each antenna. This could be sensitive because as a person breathes, their torso moves and the channels change and the mixing coefficients are no longer constant. This means that the mixing matrix is pretty much dependent on time, which is very difficult to determine from visual observations. Likewise, the illustrative example used in the paper generated a false positive result as the fourier transform is applied over a finite window created a sinc in the frequency domain and caused nearby signals to mix with each other due to the sinc tail. With some pros and cons the paper opens the door for further research on contactless multi-person sleep studies. 
 
 ### Implementation
 
