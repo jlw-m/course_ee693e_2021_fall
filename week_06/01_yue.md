@@ -45,7 +45,7 @@ The problem that the authors have is that the RF signals are reflected off each 
 
 ### Implementation
 
-So the RF reflections are analyzed via a Frequency-Modulated Carrier Waves (FMCW) radio. FMCW transmits a sequence of sweeps, and during each sweep, the frequency of the transmitted signal changes linearly with time. As shown below, the linear change of the transmitted signal is shown in red. Once the signal is reflected off the human body, it is given as a time-shifted blue signal. In this case, it also compares the frequency difference between the transmitted signal and received signal.
+The RF reflections are analyzed via a Frequency-Modulated Carrier Waves (FMCW) radio. FMCW transmits a sequence of sweeps, and during each sweep, the frequency of the transmitted signal changes linearly with time. As shown below, the linear change of the transmitted signal is shown in red. Once the signal is reflected off the human body, it is given as a time-shifted blue signal. In this case, it also compares the frequency difference between the transmitted signal and received signal.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/FMCW.png" title="" width="300" >}}
 
@@ -53,11 +53,14 @@ To alleviate the problems from before, the authors considered small linear motio
 
 The authors used Deepbreath, which is the first RF-based full night breathing reconstruction system that can accurately monitor multiple people even when they are in the same bed. Deepbreath runs on top of an FMCW radio with an antenna and captures the reflected signals of each person throughout an entire night observation. It does so by a three-step process:
 
-1) Motion Detection: The motion detection components takes in input observations, identifies motion intervals, and splits the observations in a series of stable periods. The idea is to detect the motion of a single individual and ignore other motions.
+a) Motion Detection: The motion detection components takes in input observations, identifies motion intervals, and splits the observations in a series of stable periods. The idea is to detect the motion of a single individual and ignore other motions.
 
-2) Breathing Separation: This module processes the observations during each stable period to disentangle the breathing signals of different people. It outputs the reconstructed breathing signals during that period. After motion detection, ICA is applied to each periond and the breathing reconstructions is obtained. To make this work, the authors allowed multiple paths for the signal since it is related linearly to the breathing motion, and they considered the short periodicity of human breathing.
+b) Breathing Separation: This module processes the observations during each stable period to disentangle the breathing signals of different people. It outputs the reconstructed breathing signals during that period. After motion detection, ICA is applied to each periond and the breathing reconstructions is obtained. To make this work, the authors allowed multiple paths for the signal since it is related linearly to the breathing motion, and they considered the short periodicity of human breathing.
 
-3) Identity Matching: The breathing sepearation module is not aware who each reconstructed signal belongs to. So the authors compare ICA components from each period and go through consistency metric to see which ICA components corresponds to which person. The goal is to have an ICA component having the same order in all stable periods such that it gives the breathing of the same person. 
+c) Identity Matching: The breathing sepearation module is not aware who each reconstructed signal belongs to. So the authors compare ICA components from each period and go through consistency metric to see which ICA components corresponds to which person. The goal is to have an ICA component having the same order in all stable periods such that it gives the breathing of the same person. 
+
+The evaluation results show that DeepBreath recover the breathing of each individual correctly when in close proximity/sharing the same bed. The Evaluation of Identity Matching confirms the robustness of their identity matching algorithm  as the total averaged accuracy is 99.1% . The Evaluation of Motion Detection with a precision of 0.933 confirms that their motion detector can successfully detect motion. In case of Breathing Rate Separation, they achieved 0.922 correlation with 0.034 breathing rate error with respect to the ground truth breathing signals demonstrating that DeepBreath can reconstruct the breathing of at least 5 people even when there is no distance between them.
+
 
 ### Experimentation
 
