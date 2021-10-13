@@ -46,9 +46,7 @@ In simplicity, the RF signals reflect off people's bodies add up linearly over t
 
 ### Implementation
 
-The RF reflections are analyzed via a Frequency-Modulated Carrier Waves (FMCW) radio. FMCW transmits a sequence of sweeps. The transmitted signal changes linearly with time during each sweep. As shown below, the linear change of the transmitted signal is shown in red. Once the signal is reflected off the human body, it is given as a time-shifted blue signal. In this case, it also compares the frequency difference between the transmitted signal and received signal.
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/FMCW.png" title="" width="300" >}}
+The RF reflections are analyzed via a Frequency-Modulated Carrier Waves (FMCW) radio. FMCW transmits a sequence of sweeps. The transmitted signal changes linearly with time during each sweep. As shown in the first figure under experimentation section, the linear change of the transmitted signal is shown in red. Once the signal is reflected off the human body, it is given as a time-shifted blue signal. In this case, it also compares the frequency difference between the transmitted signal and received signal.
 
 To alleviate the problems from before, the authors considered small linear motions involved with the breathing and substract the mean across time for each frequency, then they recover the individual breathing motions of all the sources. The authors used a full night breathing reconstruction system called Deepbreath, that can accurately monitor multiple people even when they are in the same bed. Deepbreath runs on top of an FMCW radio with an antenna and captures the reflected signals of each person throughout an entire night observation. It does so by a three-step process:
 
@@ -62,6 +60,8 @@ The authors solved the signal blockage problem using a well-known phenomenon cal
 
 ### Experimentation
 
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/FMCW.png" title="" width="300" >}}
+
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/Fig11_Yue.png" title="Performance comparison between DeepBreath and an oracle-based baseline" width="320" >}}
 The authors compare the performance of DeepBreath with a baseline that uses an oracle to iterate over all voxels in the bed area. For each person, the oracle zooms in on the voxel that results in more accurate breathing signals. 
 
@@ -73,6 +73,7 @@ The authors shows DeepBreath's performance by observing the voxels centered on e
 
 
 ### Discussion
+
 Ground truth measurement is established by strapping a belt around the chest and using the change in chest volume to get breathing signal. This ground truth will serve as the standard in which we compare DeepBreath’s performance against. To establish a contextual understanding of this comparison, a belt strapped to the diaphragm was compared to a belt strapped to the chest. In an ideal world the correlation would have been one (as we would expect DeepBreath’s correlation to be as well), but the data showed a correlation of 0.915. This sets the standard for DeepBreath to match. 
 
 Thirteen couples participated in the study. Each couple were assigned near subject and far subject identification based on their distance from the sensor. To measure the ground truth, everyone wore a chest belt. During the data collection, the motion detector was used to remove periods of motion and only operated on stable periods. Data analysis showed, on average, 11% of a night exhibits motion which agrees with medical literature.
@@ -82,22 +83,23 @@ Data collected over 21 nights to measure the identity matching of DeepBreath has
 The evaluation results show that DeepBreath recover the breathing of each individual correctly when in close proximity/sharing the same bed. The Evaluation of Identity Matching confirms the robustness of their identity matching algorithm  as the total averaged accuracy is 99.1% . The Evaluation of Motion Detection with a precision of 0.933 confirms that their motion detector can successfully detect motion. In case of Breathing Rate Separation, they achieved 0.922 correlation with 0.034 breathing rate error with respect to the ground truth breathing signals demonstrating that DeepBreath can reconstruct the breathing of at least 5 people even when there is no distance between them.
 
 ### Audience Questions
-1.	Can multiple reflections be made to reach the person without too much noise?
+
+1. Can multiple reflections be made to reach the person without too much noise?
 
 For wireless settings, the multiple reflections caused by different angles matters. We believe that manipulating the environment can create artificial reflections. In previous presentation(s), there was a manipulation of moving metal plates to simulate chest displacement, so we assume that the multiple paths can be made. 
 
-2.	Are there any security risks in gathering data from this technology?
+2. Are there any security risks in gathering data from this technology?
 
 The source data (subject’s breathing) is available in the open out there without any privacy. So, any party with an antenna can pick up these breathing signals and use the similar model to get the information. However, we are not sure if this lies under privacy issue or security because the weak point here is before the data collection. This vulnerability exists before the system is used or even implemented.
 	
-3.	What is the cost of the FMCW system in comparison to a WIFI system?
+3. What is the cost of the FMCW system in comparison to a WIFI system?
 
 The cost of such systems would be somewhere between $100 - $1000. It depends on the application and implementation, but in regards to radar systems, WIFI has a relatively narrow bandwidth compared to the tailor-made transmissions in FMCW. So right now, WIFI can still be cheaper. However, we believe that with the recent advances in low-cost FMCW technology for example Software Defined Radio, it is possible that FMCW can be cheaper than WIFI in the application of multipath reflections.
 
-4.	 What is the system's performance when dealing with moving objects?
+4. What is the system's performance when dealing with moving objects?
 
 The authors futher research proposes to disentangle other types of motion, e.g., typing, or the simultaneous motion of two hands etc. apart from breathing separation. The current system is designed focusing on separating mixure of signals positioned in zero distance and thus moving objects might are hard to model in the existing system. The Inddependent Component Analysis (ICA) cannot separate and identify the signals off an object in motion.
 
-5. 	There was an experiment with 5 individuals and DeepBreath could reconstruct the breathing of each subject. Do you believe the system could function effectively with a fan near the subject?
+5. There was an experiment with 5 individuals and DeepBreath could reconstruct the breathing of each subject. Do you believe the system could function effectively with a fan near the subject?
 
 Yes, the systems could effectively fuctioned with a fan near the subject because DeepBreath uses a convolutional neural network to detect motion reliably  and the system is capable of identifing movements of the monitored people and ignore all irrelevant motion of a fan or the HVAC for example.
