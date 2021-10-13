@@ -46,22 +46,19 @@ In simplicity, the RF signals reflect off people's bodies add up linearly over t
 
 ### Implementation
 
-The RF reflections are analyzed via a Frequency-Modulated Carrier Waves (FMCW) radio. FMCW transmits a sequence of sweeps, and during each sweep, the frequency of the transmitted signal changes linearly with time. As shown below, the linear change of the transmitted signal is shown in red. Once the signal is reflected off the human body, it is given as a time-shifted blue signal. In this case, it also compares the frequency difference between the transmitted signal and received signal.
+The RF reflections are analyzed via a Frequency-Modulated Carrier Waves (FMCW) radio. FMCW transmits a sequence of sweeps. The transmitted signal changes linearly with time during each sweep. As shown below, the linear change of the transmitted signal is shown in red. Once the signal is reflected off the human body, it is given as a time-shifted blue signal. In this case, it also compares the frequency difference between the transmitted signal and received signal.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_06/images/FMCW.png" title="" width="300" >}}
 
-To alleviate the problems from before, the authors considered small linear motions involved with the breathing and substract the mean across time for each frequency, then they recover the individual breathing motions of all the sources. 
-
-The authors used Deepbreath, which is the first RF-based full night breathing reconstruction system that can accurately monitor multiple people even when they are in the same bed. Deepbreath runs on top of an FMCW radio with an antenna and captures the reflected signals of each person throughout an entire night observation. It does so by a three-step process:
+To alleviate the problems from before, the authors considered small linear motions involved with the breathing and substract the mean across time for each frequency, then they recover the individual breathing motions of all the sources. The authors used a full night breathing reconstruction system called Deepbreath, that can accurately monitor multiple people even when they are in the same bed. Deepbreath runs on top of an FMCW radio with an antenna and captures the reflected signals of each person throughout an entire night observation. It does so by a three-step process:
 
 a) Motion Detection: The motion detection components takes in input observations, identifies motion intervals, and splits the observations in a series of stable periods. The idea is to detect the motion of a single individual and ignore other motions.
 
-b) Breathing Separation: This module processes the observations during each stable period to disentangle the breathing signals of different people. It outputs the reconstructed breathing signals during that period. After motion detection, ICA is applied to each periond and the breathing reconstructions is obtained. To make this work, the authors allowed multiple paths for the signal since it is related linearly to the breathing motion, and they considered the short periodicity of human breathing.
+b) Breathing Separation: The breathing signals of different people during is stable period is distangled using this module and during that period it generates the output containing the reconstructed breathing signals. After motion detection, ICA is applied to each period and the breathing reconstructions is obtained. To make this work, the authors allowed multiple paths for the signal since it is related linearly to the breathing motion, and they considered the short periodicity of human breathing.
 
-c) Identity Matching: The breathing sepearation module is not aware who each reconstructed signal belongs to. So the authors compare ICA components from each period and go through consistency metric to see which ICA components corresponds to which person. The goal is to have an ICA component having the same order in all stable periods such that it gives the breathing of the same person. 
+c) Identity Matching: Identity matching is required as the breathing separation module is not aware or capable of automatically recognize who each reconstructed signal belongs to. So the authors compare ICA components from each period and go through consistency metric to see which ICA components corresponds to which person. The goal is to have an ICA component having the same order in all stable periods such that it gives the breathing of the same person.
 
 The authors solved the signal blockage problem using a well-known phenomenon called multipath. To filter the noisy observations a term Long term Breathing-to-Noise Ratio (l-BNR) is defined and identified. If the l-BNR value is low, it indicates the possibility of the observation containing useful breathing information is low and hence it is not necessary to exclude such observations in recovering breathing signals.
-
 
 ### Experimentation
 
