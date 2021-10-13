@@ -28,13 +28,13 @@ This paper presents a novel RF-based respiration monitoring system named “Deep
 
 ## Review
 ### Strengths
-- All previous studies demonstrate accurate monitoring of a single person’s breathing but this paper focuses on multiple persons breathing with sucessful experimentation results. 
+- All previous studies demonstrate accurate monitoring of a single person’s breathing but this paper focuses on multiple persons breathing with successful experimentation results. 
 - Average error in breating rate detection is very small (0.140 breaths per minute). 
 - DeepBreath can be scaled for more than two people and the accuracy does not decrease with the number of people.
 - System design can apply to different applications beside respiration monitoring.
 
 ### Weaknesses
-- The illustrative example used in the paper generates a false positive result as the Fourier transform is applied over a finite window it creats a sinc in the frequency domain and causes nearby signals to mix with each other due to the sinc tail. 
+- The illustrative example used in the paper generates a false positive result as the Fourier transform is applied over a finite window it creates a sinc in the frequency domain and causes nearby signals to mix with each other due to the sinc tail. 
 - The current system cannot model objects in motion for example typing or the simultaneous motion of two hands.
 - The mixing matrix is pretty much dependent on time, which is very difficult to determine from visual observations.
 - Breathing separation trial was done for 5 mins. No further study is being conducted to verify that the system/setup would give same results if the trial lasted longer than 5 minutes. 
@@ -80,13 +80,13 @@ Thirteen couples participated in the study. Each couple were assigned near subje
 
 Data collected over 21 nights to measure the identity matching of DeepBreath has an average accuracy of 99.1% and all subjects had an accuracy of above 95%. The breathing separation of multiple people with minimum distance between them was measured using five people sitting on a couch shoulder-to-shoulder. There were 8 different people who participated in different combinations of five subjects. Each trial lasted five minutes and the correlation between DeepBreath’s signal and the ground truth had an average of 0.922. 
 
-The evaluation results show that DeepBreath recover the breathing of each individual correctly when in close proximity/sharing the same bed. The Evaluation of Identity Matching confirms the robustness of their identity matching algorithm  as the total averaged accuracy is 99.1% . The Evaluation of Motion Detection with a precision of 0.933 confirms that their motion detector can successfully detect motion. In case of Breathing Rate Separation, they achieved 0.922 correlation with 0.034 breathing rate error with respect to the ground truth breathing signals demonstrating that DeepBreath can reconstruct the breathing of at least 5 people even when there is no distance between them.
+The evaluation results show that DeepBreath recovers the breathing of each individual correctly when in close proximity/sharing the same bed. The Evaluation of Identity Matching confirms the robustness of their identity matching algorithm  as the total averaged accuracy is 99.1% . The Evaluation of Motion Detection with a precision of 0.933 confirms that their motion detector can successfully detect motion. In case of Breathing Rate Separation, they achieved 0.922 correlation with 0.034 breathing rate error with respect to the ground truth breathing signals demonstrating that DeepBreath can reconstruct the breathing of at least 5 people even when there is no distance between them.
 
 ### Audience Questions
 
 1. Can multiple reflections be made to reach the person without too much noise?
 
-For wireless settings, the multiple reflections caused by different angles matters. We believe that manipulating the environment can create artificial reflections. In previous presentation(s), there was a manipulation of moving metal plates to simulate chest displacement, so we assume that the multiple paths can be made. 
+For wireless settings, the multiple reflections caused by different angles matter. We believe that manipulating the environment can create artificial reflections. In previous presentation(s), there was a manipulation of moving metal plates to simulate chest displacement, so we assume that the multiple paths can be made. 
 
 2. Are there any security risks in gathering data from this technology?
 
@@ -98,8 +98,8 @@ The cost of such systems would be somewhere between $100 - $1000. It depends on 
 
 4. What is the system's performance when dealing with moving objects?
 
-The authors futher research proposes to disentangle other types of motion, e.g., typing, or the simultaneous motion of two hands etc. apart from breathing separation. The current system is designed focusing on separating mixure of signals positioned in zero distance and thus moving objects might are hard to model in the existing system. The Inddependent Component Analysis (ICA) cannot separate and identify the signals off an object in motion.
+The authors further research proposes to disentangle other types of motion, e.g., typing, or the simultaneous motion of two hands etc. apart from breathing separation. The current system is designed focusing on separating mixure of signals positioned in zero distance and thus moving objects might are hard to model in the existing system. The Inddependent Component Analysis (ICA) cannot separate and identify the signals off an object in motion.
 
 5. There was an experiment with 5 individuals and DeepBreath could reconstruct the breathing of each subject. Do you believe the system could function effectively with a fan near the subject?
 
-Yes, the systems could effectively fuctioned with a fan near the subject because DeepBreath uses a convolutional neural network to detect motion reliably  and the system is capable of identifing movements of the monitored people and ignore all irrelevant motion of a fan or the HVAC for example.
+Yes, the systems could effectively function with a fan near the subject because DeepBreath uses a convolutional neural network to detect motion reliably  and the system is capable of identifing movements of the monitored people and ignore all irrelevant motion of a fan or the HVAC for example.
