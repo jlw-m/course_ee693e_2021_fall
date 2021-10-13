@@ -37,7 +37,7 @@ This paper presents a novel RF-based respiration monitoring system named “Deep
 - The illustrative example used in the paper generates a false positive result as the Fourier transform is applied over a finite window it creats a sinc in the frequency domain and causes nearby signals to mix with each other due to the sinc tail. 
 - The current system cannot model objects in motion for example typing or the simultaneous motion of two hands.
 - The mixing matrix is pretty much dependent on time, which is very difficult to determine from visual observations.
-- Breathing separation trial was done for 5 mins. There is no solid evidence that the system/setup would give same results if the trial lasted longer than 5 minutes. 
+- Breathing separation trial was done for 5 mins. No further study is being conducted to verify that the system/setup would give same results if the trial lasted longer than 5 minutes. 
 
 ### Detailed Comments
 The paper provides an explanation into how the authors separate the mixtures of RF breathing signals and focuses on multiple persons breathing with sucessful experimentation results. The concept of Independent Component Analysis (ICA) helps us recognize signals from multiple sources, analyze the mixture, and split the signals apart. The goal of ICA is to recover the sources and the mixing matrix given only the observations. The proposed "DeepBreath" has some novel features like it can be scaled for more than two people and the accuracy does not decrease with the number of people. The average error in breating rate detection is 0.140 breaths per minute which is quite small. The system design can be applied to different applications beside respiration monitoring.
