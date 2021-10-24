@@ -18,7 +18,7 @@ tags:
 
 ***
 ## Paper Summary
-About reality
+In a common Virtual Reality (VR) system, a user wears a headset which is connected to a PC, or a game console, via HDMI cable. The VR system requires a high data rate to get the complete experience of the device. There are major challenges to the VR systems. Having an HDMI wiring connectivity limits the user's mobility. A key approach to this problem is using a mmWave, which has an advantage of proving wireless high data rate. However, two major problems of mmWave are mobility problems and blockage problems. This paper tackles the two mmWave problems by proposing a VR system using a mmWave mirror and a tracker algorithm. This solution allows mmWave links to sustain high data rate without mobility and blockage problems.
 ***
 
 ## Presentation
