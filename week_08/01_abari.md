@@ -28,12 +28,14 @@ About reality
 
 ## Review
 ### Strengths
-- Wireless. Users will be able to move freely.
-- MoVR’s mirror enables high data rate link between VR headset and PC even with blockage
+- Wireless communication between VR headsets and their game consoles. Users will be able to move freely away from the PC.
+- MoVR’s mirror enables high data rate link between VR headset and PC even with blockage.
 - Solves mobility problem.
 
 ### Weaknesses
 - MoVR still fails in certain locations.
+- SNR values are depedent on the number of MoVR mirrors.
+- Current MoVR headset is powered by USB cable.
 
 ### Detailed Comments
 <!-- By detecting the timing characteristics of click traffic feed received at ad networks, one can detect fraudulent clicks that attempt to be stealthy by sending a low amount of clicks. This is useful as farming clicks is becoming more economical with advances in technology, meaning that more attackers can have the luxury of sending a low amount of fraudulent clicks in an attempt to not be flagged as fake. Then even with a wide range of rates which an attacker can send fake clicks, whether the adversary decides to imitate previous user clicks or generate random clicks, Clicktok is able to identify repeating patterns of the imitation clicks, or the randomness of the clicks as not being attributed to real clicks.
@@ -100,7 +102,7 @@ The number of mirrors needed for the system was not mentioned in the paper, but 
 	
 3. Do you believe that having multiple receivers on the headset eliminates the need for mirrors?
 
-We believe that having multiple receivers would not solve the blockage problem between the AP and headset’s line-of-sight. By intuition, having multiple receivers with one transmitter is only useful when the receivers are in a different location. Since the headset receivers are in one location and is operating on the same frequency as the transmitter, then it can be assumed that all the receivers pick up the same signal.
+We believe that having multiple receivers would not solve the blockage problem between the AP and headset’s line-of-sight. It is recommended by the authors that the headset should have multiple antennas. However, if any body parts come between the headset and the AP, then all headset antennas are blocked. Thus, the use of the MoVR mirror is necessary.
 
 
 4. They conducted the experiment in a 5-m x 5-m room. Do you think it would impact the blockage problems if the room size were different (bigger/smaller)?
