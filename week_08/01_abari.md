@@ -54,17 +54,17 @@ Mobility issues are resolved with a tracker algorithm which also takes advantage
 ### Experimentation
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_08/images/Abari_Fig1.png" title="Fig. 1: Blockage Duration" width="320" >}}
 
-By calculating the equation of the line between the headset and the base station, any intersection of the user’s hand and the line, i.e. the controller between the LOS path, causes blockage. This figure reflects the scenario of the AP’s line-of-sight to the headset being blocked 20 times during a 5-minute period of the game. This figure shows the cumulative distribution function (CDF), or the cumulative probability over a given blockage duration. 
+By calculating the equation of the line between the headset and the base station, any intersection of the user’s hand and the line, i.e. the controller between the LoS path, causes blockage. This figure reflects the scenario of the AP’s line-of-sight to the headset being blocked 20 times during a 5-minute period of the game. This figure shows the cumulative distribution function (CDF), or the cumulative probability over a given blockage duration. 
 
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_08/images/Abari_Fig2.png" title="Fig. 2: MoVR’s Mirror Performance” width="320" >}}
 
-Another criteria were given to see how effective MoVR is at dealing with the blockage problem. In this case, the AP is placed on one side of the room while the mirror is placed on an adjacent side. By changing the location of the headset while also changing orientation, three scenarios were performed: no blockage between the AP and headset; blockage between the LOS path; and blockage while using the MoVR mirror.
+Another criteria were given to see how effective MoVR is at dealing with the blockage problem. In this case, the AP is placed on one side of the room while the mirror is placed on an adjacent side. By changing the location of the headset while also changing orientation, three scenarios were performed: no blockage between the AP and headset; blockage between the LoS path; and blockage while using the MoVR mirror.
 
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_08/images/Abari_Fig3.png" title="Fig. 3: AP to Mirror Beam Alignment Accuracy” width="320" >}}
 
-This figure reflects the how accurate is the beam alignment between the AP and the MoVR mirror. It took 100 runs to measure the best beam alignment while changing the mirror location and orientation each time. Afterwards, an angle was estimated to provide best beam alignment between the mirror and AP.
+This figure reflects how accurate is the beam alignment between the AP and the MoVR mirror. It took 100 runs to measure the best beam alignment while changing the mirror location and orientation each time. Afterwards, an angle was estimated to provide best beam alignment between the mirror and AP.
 
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_08/images/Abari_Fig4.png" title="Fig. 4: MoVR Beam Alignment Accuracy” width="320" >}}
@@ -75,20 +75,20 @@ This figure shows how accurate is beam alignment for the entire system. Another 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_08/images/Abari_Fig5.png" title="Fig. 5: SNR Values vs Location” width="320" >}}
    
 
-Finally, an experiment was performed such that the MoVR system accounts for the player moving around the room. The headset is moved around the room, but this time, the direct path between the headset and AP is intentionally blocked with the user’s hand. Afterwards, the SNR is calculated and show in the figures above for three different scenarios: (a)No MoVR mirror, which gives the exhaustive search; a fixed gain mirror, where there is a fixed amplification gain in the setup; and the inclusion of the MoVR. 
+Finally, an experiment was performed such that the MoVR system accounts for the player moving around the room. The headset is moved around the room, but this time, the direct path between the headset and AP is intentionally blocked with the user’s hand. Afterwards, the SNR is calculated and shown in the figures above for three different scenarios: (a)No MoVR mirror, which gives the exhaustive search; a fixed gain mirror, where there is a fixed amplification gain in the setup; and the inclusion of the MoVR. 
 
 ### Discussion
 
-When evaluating the blockage between the AP’s line-of-sight to the headset during an actual game, the experiment showed that the line-of-sight was blocked 20 times during a 5-minute game. When looking at the Fig. 1 under the Experimentation section, from the 20 times that blockage occurred, the median blockage duration is 245-ms whereas the VR frame rate is only 10-ms. This confirms that blockage occurs very often, and the duration is long enough to affect the VR experience.
+When evaluating the blockage between the AP’s line-of-sight to the headset during an actual game, the experiment showed that the line-of-sight was blocked 20 times during a 5-minute game. When looking at Fig. 1 under the Experimentation section, from the 20 times that blockage occurred, the median blockage duration is 245-ms whereas the VR frame rate is only 10-ms. This confirms that blockage occurs very often, and the duration is long enough to affect the VR experience.
 
-In terms of the MoVR’s capabilities to address the blockage problem, we can look at Fig. 2 under the Experimentation section. Fig. 2 shows that without the MoVR mirror, blockage drops the SNR gain by as much as 27 dB, with an average of 17 db. Thus, relying on indirect reflections in the environment to counter blockage is ineffective.
+In terms of the MoVR’s capabilities to address the blockage problem, we can look at Fig. 2 under the Experimentation section. Fig. 2 shows that without the MoVR mirror, blockage drops the SNR gain by as much as 27 dB, with an average of 17 dB. Thus, relying on indirect reflections in the environment to counter blockage is ineffective.
 
 As for the SNR using the MoVR mirror, in most cases, it showed higher SNR gain over the direct line-of-sight path with no blockage. This means that the AP’s distance to the mirror is shorter than its distance to the headset’s receiver. Thus, the mirror along the path amplifies the signal and counters SNR reduction to the longer distances of the headset. The SNR provided from the MoVR mirror can go as high as 30 dB, which is more than the maximum data rate. Thus, the experiment shows that the MoVR’s mirror gives high data rate link between the VR headset and PC even with blockage on the line-of-sight path.
 
 
 In Fig. 3 under the Experimentation section, the experiment showed that the MoVR estimates the angle of best beam alignment to within 2 degrees of the actual angle. The authors also reported that such a small error in estimating the angles results in negligible loss in SNR. As for Fig. 4 under the Experimentation section, it is expected that the MoVR performs better than the exhaustive search for best SNR values. For some cases, the experiment showed worst SNR for the MoVR regime, but the SNR value still meets the requirement for the VR headset. The reason exhaustive search is not utilized as much is because this method tries all beam alignments and introduces much latency and overhead. Regarding the beam alignment latency of the MoVR system, it was shown that the total delay between tracking, the beam alignment algorithm, and reconfiguring of the beam takes around 1 millisecond. This delay is low enough to support the VR frame rate.
 
-Finally, it is expected for the SNR to be worse for the case without the mirror since it relies on indirection reflections (Fig. 5(a)). However in Fig. 5(b), which uses the fixed gain mirror, shows that the mirror improves the SNR over relying on these indirect reflections but there are some spots that are below the required 20 dB for the headset. The MoVR mirror, which uses the automatic gain control algorithm, allowed high-quality untethered virtual reality by providing SNR values higher than 20 dB (Fig. 5(c)).
+Finally, it is expected for the SNR to be worse for the case without the mirror since it relies on indirect reflections (Fig. 5(a)). However in Fig. 5(b), which uses the fixed gain mirror, shows that the mirror improves the SNR over relying on these indirect reflections but there are some spots that are below the required 20 dB for the headset. The MoVR mirror, which uses the automatic gain control algorithm, allowed high-quality, untethered virtual reality by providing SNR values higher than 20 dB (Fig. 5(c)).
 
 ## Audience Questions
 
