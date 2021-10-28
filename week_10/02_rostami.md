@@ -1,9 +1,9 @@
 ---
 title: "02: Heart-to-Heart(H2H): 
 Authentication for Implanted Medical Devices
-M. Rostami, A. Juels, F. Koushanfar
+M. Rostami, A. Juels, F. Koushanfar"
 
-date: 2021-09-02
+date: 2021-10-27
 type: book
 commentable: true
 # Provide the name of the presenter
