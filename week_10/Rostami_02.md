@@ -1,5 +1,6 @@
 ---
-title: "02: Heart-to-Heart(H2H): Authentication for Implanted Medical Devices
+title: "02: Heart-to-Heart(H2H): 
+Authentication for Implanted Medical Devices
 M. Rostami, A. Juels, F. Koushanfar
 
 date: 2021-09-02
