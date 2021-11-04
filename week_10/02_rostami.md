@@ -49,7 +49,7 @@ Implantable Medical Device (IMD) applies continuous monitoring therapies for chr
 (1) Do you think other biometrics can be used for H2H? Something other than PV?
 
 - Respiration measurements can be also used for authentication. The proposal of this paper might have a different approach since statistics might be different than ECGs. 
-- 
+
 (2) Would there be a noticable difference in running time for the algorithm shown? Is it worth improving the n4logn time complexity?
 - It is possible to improve time complexity of the algorithm by using another sorting algorithm. Further research has to be conducted. 
 
