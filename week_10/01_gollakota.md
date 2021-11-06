@@ -53,6 +53,7 @@ To evaluate the shield protection against adversaries, the authors did two measu
 
 Active adversaries were further divided into two based on the equipment they use. Those that use off-the-shelf IMD programmer and those that use custom hardware that transmits with higher power. The location distances varied from 20 cm to 30 m from the shield. Each adversary ran the same command 100 times with both the shield on and shield off. The shield was able to block all the attacks by the off-the-shelf IMD programmers, but the sophisticated IMD programmers that were closer than 5m were able to get a response from the IMD. Without the shield IMD programmers up to 27 m away was able to elicit a response. This shows the shield offers valuable protection to the IMD. An additional feature of the shield is to raise an alarm when an attempt is made regardless of the success/failure of the attacker.
 
+### Implementation
 
 ### Experimentation
 In order to evaluate Clicktok, the authors of the paper, used the click traffic obtained, filtered it and exposed it to a testbed with malicious apps and click malware. Through this they were able to get a click traffic that contained both legitimate and fake clicks.
