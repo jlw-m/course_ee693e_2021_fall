@@ -82,4 +82,5 @@ Active adversaries were further divided into two based on the equipment they use
 
 3.	What are the limitations for this experiment?
 
+      The limitations of this system is the transmission power limit of the jammer. In order to prevent an attack at immensely far distances, the shield requires more power to transmit a jamming signal. In addition, the functionality of the shield is only applicable to digital and software security. If an adversary were to ever be in close, physical proximity to the patient's IMD, the attacker can trigger a reaction that even the shield is unable to prevent.
       
