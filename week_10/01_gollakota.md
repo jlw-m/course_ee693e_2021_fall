@@ -31,41 +31,45 @@ Implantable medical devices are widespread and have been helping patients for de
 
 ## Review
 ### Strengths
-- Provide protection for existing IMD with any modifications	
+- Shield prevents the IMDs' transmission and other incoming transmission
+- Provide protection for existing IMD without any modifications	
 - Can coexist with other devices
-- First to use full duplex radio
+- First full-duplex radio without strict antenna positioning
 
 
 ### Weaknesses
 - High turn-around time
-- Low practicality of jammer-cum-receiver, especially when translating signal from analog to digital domain
+- Full-duplex radio is very difficult to implment
 - Shield has a transmission power limit, which is dependent on the position of the adversary
 
 ### Detailed Comments
-By detecting the timing characteristics of click traffic feed received at ad networks, one can detect fraudulent clicks that attempt to be stealthy by sending a low amount of clicks. This is useful as farming clicks is becoming more economical with advances in technology, meaning that more attackers can have the luxury of sending a low amount of fraudulent clicks in an attempt to not be flagged as fake. Then even with a wide range of rates which an attacker can send fake clicks, whether the adversary decides to imitate previous user clicks or generate random clicks, Clicktok is able to identify repeating patterns of the imitation clicks, or the randomness of the clicks as not being attributed to real clicks.
+The wireless connectivity of implantable medical devices (IMDs) leaves IMDs exploited to compromised confidentiality of transmitted data or unauthorized commands. An external device called a shield is worn on the body and near the IMD to jam the IMDs’ transmissions and other incoming transmissions. This helps prevent adversaries from decoding any information from the IMD and encoding unauthorized commands into the IMDs. Since the shield can be carried around as an external device to protect existing IMDs, this is useful since it eliminates the concept of surgically removing IMDs to perform cryptographic mechanisms. This work also presents this shield as the full-duplex radio without any strict antenna positioning. The jamming antenna and the receive antenna in the radio can be placed next each other, and hence can be built as a small wearable device capable of providing security. In addition to the compatibility with existing IMDs, shields can also coexist with meteorological devices that are users in the medical implant communication services (MICS) band. The shield does detect all packets, but it does not jam any of the cross-traffic packets. This means that the only packets it jams is those that were addressed to the IMD. 
 
-As for the potential weakness in Clicktok, a more advanced click randomization/generation scheme may make detecting fraudulent clicks from real organic clicks difficult. If an attacker is able to uncover how Clicktok determines fraudulent clicks, they may be able to generate a workaround towards Clicktok's defenses. Then addressing the IP aggregation and churn, as some networks may aggregate IPs, it makes identifying individual user's clicks all the more difficult which would result in a lower efficacy when identifying false clicks.
+Although the shield can jam all packets address to the IMD, the software radio implementation of the shield showed high turn-around times. A high turn-around time results into longer exposure of an IMDs’ transmissions after the shield stops an adversary’s transmission. Typically, a hardware implementation of the shield would be more efficient and give a turn-around time of tens of microseconds. In terms of design of the full-duplex radio, the jammer-cum-receiver shows low practicality. When jamming or transmitting signals, relying on the digital domain and the baseband to cancel signals out is not very dependable. Thus, it is not practical to use this device. Another performance issue with the shield is that it has a transmission power limit. Although the shield is capable of jamming signals at a distance, when the adversary is too far, the device would need more power to continue its operations.
 
 ### Implementation
 
 ### Experimentation
 In order to evaluate Clicktok, the authors of the paper, used the click traffic obtained, filtered it and exposed it to a testbed with malicious apps and click malware. Through this they were able to get a click traffic that contained both legitimate and fake clicks.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig5_Gollakota.png" title="Fig. 1: Blockage Duration" width="320" >}}
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig6_Gollakota.png" title="Fig. 1: Blockage Duration" width="320" >}}
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig7_Gollakota.png" title="Fig. 1: Blockage Duration" width="320" >}}
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig8_Gollakota.png" title="Fig. 1: Blockage Duration" width="320" >}}
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig9_Gollakota.png" title="Fig. 1: Blockage Duration" width="320" >}}
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Table1_Gollakota.png" title="Fig. 1: Blockage Duration" width="320" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig5_Gollakota.png" title="Fig. 1: Antenna cancellation" width="320" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable2.png" title="Table 2: Detection Across Multiple Clickstreams" width="320" >}}
-They also categorized and analyzed different click categories, where sponsored are advertisements displayed by search engines, contextual are ads displayed on a webpage based on keywords present in the webpage, and mobile are ads exclusively present on mobile devices. From the results in Table 2, it is shown that the Clicktok is able to identify fraudulent clicks across the ad categories at a high true positive rate of ~90%, and a low false positive rate at around ~0.004%.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable3.png" title="Table 3: Active Defense" width="320" >}}
-When applying the active defense with bait clicks, it can be seen in Table 3, that it improves detection rates. With both the increase in true positive rates, and decrease in false positive rates, show that an active defense may be important in identifying fake clicks.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig6_Gollakota.png" title="Fig. 2: Packet loss at the shield" width="320" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
-Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig7_Gollakota.png" title="Fig. 3: Tradeoff between BER at the eavesdropper and reliable decoding at the shield" width="320" >}}
+
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig8_Gollakota.png" title="Fig. 4: Depletion of the IMD battery without the shield" width="320" >}}
+
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig9_Gollakota.png" title="Fig. 5: Sending unauthorized commands to the IMD without the shield" width="320" >}}
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig10_Gollakota.png" title="Fig. 6: Adversary transmission 100 times the shield's power" width="320" >}}
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Table1_Gollakota.png" title="Table 1: Coexistance of the shield with other devices" width="320" >}}
+
 
 ### Discussion
 The authors had to calibrate the shield parameters to set the component bench marks. The shield was doing two tasks, send a random signal to the jammer and an antidote to the receiver antenna. The antenna calibration evaluates the performance of the antidote signal at the receiver. To evaluate this, the shield transmitted 100 Kb without the antidote followed by 100 Kb with the antidote. The difference in the power received at the receiver shows how much the antidote was able to block. This value averaged at 32 dB. The shield needs to balance how much to jam the eavesdropper and how much error to tolerate when decoding the IMD signal. 
