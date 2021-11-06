@@ -25,7 +25,7 @@ Implantable medical devices are widespread and have been helping patients for de
 ***
 
 ## Presentation
-{{< youtube C2LOWF_K-FM >}}
+{{< youtube h7mzwFhR_M0 >}}
 
 ***
 
@@ -38,6 +38,8 @@ Implantable medical devices are widespread and have been helping patients for de
 
 ### Weaknesses
 - High turn-around time
+- Low practicality of jammer-cum-receiver, especially when translating signal from analog to digital domain
+- Shield has a transmission power limit, which is dependent on the position of the adversary
 
 ### Detailed Comments
 By detecting the timing characteristics of click traffic feed received at ad networks, one can detect fraudulent clicks that attempt to be stealthy by sending a low amount of clicks. This is useful as farming clicks is becoming more economical with advances in technology, meaning that more attackers can have the luxury of sending a low amount of fraudulent clicks in an attempt to not be flagged as fake. Then even with a wide range of rates which an attacker can send fake clicks, whether the adversary decides to imitate previous user clicks or generate random clicks, Clicktok is able to identify repeating patterns of the imitation clicks, or the randomness of the clicks as not being attributed to real clicks.
