@@ -50,7 +50,7 @@ Although the shield can jam all packets address to the IMD, the software radio i
 ### Implementation
 
 ### Experimentation
-In order to evaluate Clicktok, the authors of the paper, used the click traffic obtained, filtered it and exposed it to a testbed with malicious apps and click malware. Through this they were able to get a click traffic that contained both legitimate and fake clicks.
+In order to evaluate the prototype shield against commerically avaiable IMDs, the authors show its effectiveness in protecting confidentiality of the IMD's message and defending against unauthorized parties. The authors also performed experiments to see how effective the shield decodes IMD's transmission despite jamming, and what would happen if the shield is not present.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig5_Gollakota.png" title="Fig. 1: Antenna cancellation" width="320" >}}
 
