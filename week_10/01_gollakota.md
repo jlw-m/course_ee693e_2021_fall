@@ -54,6 +54,7 @@ In order to evaluate the prototype shield against commerically avaiable IMDs, th
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig5_Gollakota.png" title="Fig. 1: Antenna cancellation" width="320" >}}
 
+The shield sends a jamming signal from its jamming antenna and a corresponding antidote on its recieiving antenna. By computing the received power at the recieve antenna with and withou the antidote, the authors presented the amount of cancellation over multiple runs of the experiment.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig6_Gollakota.png" title="Fig. 2: Packet loss at the shield" width="320" >}}
 
