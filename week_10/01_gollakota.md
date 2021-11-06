@@ -46,13 +46,6 @@ By detecting the timing characteristics of click traffic feed received at ad net
 
 As for the potential weakness in Clicktok, a more advanced click randomization/generation scheme may make detecting fraudulent clicks from real organic clicks difficult. If an attacker is able to uncover how Clicktok determines fraudulent clicks, they may be able to generate a workaround towards Clicktok's defenses. Then addressing the IP aggregation and churn, as some networks may aggregate IPs, it makes identifying individual user's clicks all the more difficult which would result in a lower efficacy when identifying false clicks.
 
-### Discussion
-The authors had to calibrate the shield parameters to set the component bench marks. The shield was doing two tasks, send a random signal to the jammer and an antidote to the receiver antenna. The antenna calibration evaluates the performance of the antidote signal at the receiver. To evaluate this, the shield transmitted 100 Kb without the antidote followed by 100 Kb with the antidote. The difference in the power received at the receiver shows how much the antidote was able to block. This value averaged at 32 dB. The shield needs to balance how much to jam the eavesdropper and how much error to tolerate when decoding the IMD signal. 
-
-To evaluate the shield protection against adversaries, the authors did two measurements. The first one was against passive adversaries where eavesdroppers try to intercept messages, and the second one is against active adversaries where they try to issue unauthorized commands to the IMD. The shield repeatedly triggers the IMD to transmit the same 1000 packets to evaluate shield’s jamming against passive adversaries. All the adversary locations had nearly 50% BER showing the effectiveness of the shield. 
-
-Active adversaries were further divided into two based on the equipment they use. Those that use off-the-shelf IMD programmer and those that use custom hardware that transmits with higher power. The location distances varied from 20 cm to 30 m from the shield. Each adversary ran the same command 100 times with both the shield on and shield off. The shield was able to block all the attacks by the off-the-shelf IMD programmers, but the sophisticated IMD programmers that were closer than 5m were able to get a response from the IMD. Without the shield IMD programmers up to 27 m away was able to elicit a response. This shows the shield offers valuable protection to the IMD. An additional feature of the shield is to raise an alarm when an attempt is made regardless of the success/failure of the attacker.
-
 ### Implementation
 
 ### Experimentation
@@ -70,11 +63,23 @@ When applying the active defense with bait clicks, it can be seen in Table 3, th
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
 Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
+### Discussion
+The authors had to calibrate the shield parameters to set the component bench marks. The shield was doing two tasks, send a random signal to the jammer and an antidote to the receiver antenna. The antenna calibration evaluates the performance of the antidote signal at the receiver. To evaluate this, the shield transmitted 100 Kb without the antidote followed by 100 Kb with the antidote. The difference in the power received at the receiver shows how much the antidote was able to block. This value averaged at 32 dB. The shield needs to balance how much to jam the eavesdropper and how much error to tolerate when decoding the IMD signal. 
+
+To evaluate the shield protection against adversaries, the authors did two measurements. The first one was against passive adversaries where eavesdroppers try to intercept messages, and the second one is against active adversaries where they try to issue unauthorized commands to the IMD. The shield repeatedly triggers the IMD to transmit the same 1000 packets to evaluate shield’s jamming against passive adversaries. All the adversary locations had nearly 50% BER showing the effectiveness of the shield. 
+
+Active adversaries were further divided into two based on the equipment they use. Those that use off-the-shelf IMD programmer and those that use custom hardware that transmits with higher power. The location distances varied from 20 cm to 30 m from the shield. Each adversary ran the same command 100 times with both the shield on and shield off. The shield was able to block all the attacks by the off-the-shelf IMD programmers, but the sophisticated IMD programmers that were closer than 5m were able to get a response from the IMD. Without the shield IMD programmers up to 27 m away was able to elicit a response. This shows the shield offers valuable protection to the IMD. An additional feature of the shield is to raise an alarm when an attempt is made regardless of the success/failure of the attacker.
+
 ### Audience Questions
 
 1.	Is there some power loss that we need to consider for this system? Power delivered to an attacker from the IMD-shield combo? 
+      
       Distance and RF environments do play a role here. In the experiment, not all the adversaries were able to send their commands to the IMD. For example, off-the-shelf IMD programmers who were placed further than 14m were not able to get any response even without the shield, and the custom hardware adversaries further than 27m were similarly unsuccessful.
 
 2.	There is always a cost-benefit analysis when it comes to security and convenience. What is the cost of this system?
 
+      In terms of pricing, it is not very clear on what parts were used for a full-duplex radio, especially since the design has to be a small wearable device. Hence, this product could be very expensive to create and implement. In the paper, the MICS band is partitioned into multiple channels of 300 KHz width, for a total bandwidth of 3 MHz. This means that the system doesn't require a high-speed analog-to-digital converter, which lowers the cost and power consumption.
+
 3.	What are the limitations for this experiment?
+
+      
