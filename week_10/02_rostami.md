@@ -33,7 +33,11 @@ Implantable Medical Device (IMD) applies continuous monitoring therapies for chr
 ### Detailed Comments
 
 ### Implementation
+H2H was implemented into an IMD prototype consisting of three boards which can be seen from Figure 6. The ARM board was chosen to be the Leopard Gecko EFM-32 microcontroller (EFM32LG-DK3650) with a 32-bit ARM Cortex-M3 processor. This board communicates with the ECG analog front end (TI ADS1298) and the wireless board (TI CC430F5137). It has convenient power debugging tools and can extract the ECG features and communicate with the Programmer using TLS all while having a good power consumption profile. The main components can be seen in Figure 7.
 
+TLS is used to establish the secure channel implementation between the Programmer and H2H. It is designed to provide an encrypted and authenticated channel between the two parties, usually comparing the Programmer certificate to PKI. However, the authors chose to forgo that for the ECG PV comparison which is more forgiving to the noise typical in ECG signals. RSA encryption for key exchange is chosen since it is the fastest exchange option for TLS in this application which has a small public exponent of 216 + 1. The RSA follows the NIST key length recommendation of modulus and message length set to 2048 bits and is also MISRA-C standard compliant. A breakdown of the size, number of clock cycles and power consumption can be found in Table 4.
+
+A NIST-recommended pseudo-random number generator or PRNG is used to allow certain actions such as RSA ciphertext padding and key generation and commitment. The initial random seed is generated offline and stored in the IMD’s non-volatile memory. As for ECG parameter extraction, the prototype annotates the ECG R-peaks by using an open source algorithm called WQRS to apply a simple length transformation to the ECG waveform.
 
 ### Experimentation
 <!-- {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/responsetime.jpg" title="Response Time" width="300" >}}
