@@ -43,33 +43,36 @@ Implantable medical devices are widespread and have been helping patients for de
 - Shield has a transmission power limit, which is dependent on the position of the adversary
 
 ### Detailed Comments
-The wireless connectivity of implantable medical devices (IMDs) leaves IMDs exploited to compromised confidentiality of transmitted data or unauthorized commands. An external device called a shield is worn on the body and near the IMD to jam the IMDs’ transmissions and other incoming transmissions. This helps prevent adversaries from decoding any information from the IMD and encoding unauthorized commands into the IMDs. Since the shield can be carried around as an external device to protect existing IMDs, this is useful since it eliminates the concept of surgically removing IMDs to perform cryptographic mechanisms. This work also presents this shield as the full-duplex radio without any strict antenna positioning. The jamming antenna and the receive antenna in the radio can be placed next each other, and hence can be built as a small wearable device capable of providing security. In addition to the compatibility with existing IMDs, shields can also coexist with meteorological devices that are users in the medical implant communication services (MICS) band. The shield does detect all packets, but it does not jam any of the cross-traffic packets. This means that the only packets it jams is those that were addressed to the IMD. 
+The wireless connectivity of implantable medical devices (IMDs) leaves IMDs exploited to compromised confidentiality of transmitted data or unauthorized commands. An external device called a shield is worn on the body and near the IMD to jam the IMDs’ transmissions and other incoming transmissions. This helps prevent adversaries from decoding any information from the IMD and encoding unauthorized commands into the IMDs. Since the shield can be carried around as an external device to protect existing IMDs, this is useful since it eliminates the concept of surgically removing IMDs to perform cryptographic mechanisms. This work also presents this shield as the full-duplex radio without any strict antenna positioning. The jamming antenna and the receive antenna in the radio can be placed next to each other, and hence can be built as a small wearable device capable of providing security. In addition to the compatibility with existing IMDs, shields can also coexist with meteorological devices that are users in the medical implant communication services (MICS) band. The shield does detect all packets, but it does not jam any of the cross-traffic packets. This means that the only packets it jams is those that were addressed to the IMD. 
 
-Although the shield can jam all packets address to the IMD, the software radio implementation of the shield showed high turn-around times. A high turn-around time results into longer exposure of an IMDs’ transmissions after the shield stops an adversary’s transmission. Typically, a hardware implementation of the shield would be more efficient and give a turn-around time of tens of microseconds. In terms of design of the full-duplex radio, the jammer-cum-receiver shows low practicality. When jamming or transmitting signals, relying on the digital domain and the baseband to cancel signals out is not very dependable. Thus, it is not practical to use this device. Another performance issue with the shield is that it has a transmission power limit. Although the shield is capable of jamming signals at a distance, when the adversary is too far, the device would need more power to continue its operations.
+Although the shield can jam all packets addressed to the IMD, the software radio implementation of the shield showed high turn-around times. A high turn-around time results into longer exposure of an IMDs’ transmissions after the shield stops an adversary’s transmission. Typically, a hardware implementation of the shield would be more efficient and give a turn-around time of tens of microseconds. In terms of design of the full-duplex radio, the jammer-cum-receiver shows low practicality. When jamming or transmitting signals, relying on the digital domain and the baseband to cancel signals out is not very dependable. Thus, it is not practical to use this device. Another performance issue with the shield is that it has a transmission power limit. Although the shield is capable of jamming signals at a distance, when the adversary is too far, the device would need more power to continue its operations.
 
 ### Implementation
 
 ### Experimentation
-In order to evaluate the prototype shield against commerically avaiable IMDs, the authors show its effectiveness in protecting confidentiality of the IMD's message and defending against unauthorized parties. The authors also performed experiments to see how effective the shield decodes IMD's transmission despite jamming, and what would happen if the shield is not present.
+In order to evaluate the prototype shield against commerically avaiable IMDs, the authors show its effectiveness in protecting confidentiality of the IMD's message and defending against unauthorized parties. The authors also performed experiments to see how effectively the shield decodes IMD's transmission despite jamming, and what would happen if the shield is not present.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig5_Gollakota.png" title="Fig. 1: Antenna cancellation" width="320" >}}
 
-The shield sends a jamming signal from its jamming antenna and a corresponding antidote on its recieiving antenna. By computing the received power at the recieve antenna with and withou the antidote, the authors presented the amount of cancellation over multiple runs of the experiment.
+The shield sends a jamming signal from its jamming antenna and a corresponding antidote on its recieiving antenna. By computing the received power at the recieve antenna with and without the antidote, the authors presented the amount of cancellation over multiple runs of the experiment.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig6_Gollakota.png" title="Fig. 2: Packet loss at the shield" width="320" >}}
-
+The shield’s capacity to understand the signals sent by the IMD while jamming other potential adversaries. Data collected over multiple test runs.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig7_Gollakota.png" title="Fig. 3: Tradeoff between BER at the eavesdropper and reliable decoding at the shield" width="320" >}}
-
+The adversary’s capacity to decipher intercepted IMD signals while the shield is activated. The CDF of the adversary BER over all the locations tested.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig8_Gollakota.png" title="Fig. 4: Depletion of the IMD battery without the shield" width="320" >}}
-
+The authors aggregated the IMD responses to adversary triggers at every location with both the shield activated and deactivated. The adversary is using off-the-shelf equipment.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig9_Gollakota.png" title="Fig. 5: Sending unauthorized commands to the IMD without the shield" width="320" >}}
+Off-the-shelf adversary equipment attempts to send unauthorized command to the IMD from different location. Two runs of attempt, one with shield and the other without the shield.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Fig10_Gollakota.png" title="Fig. 6: Adversary transmission 100 times the shield's power" width="320" >}}
+High powered adversary equipment attempts to control IMD from different locations. Each attempt was done twice, one with the shield and the other without.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Table1_Gollakota.png" title="Table 1: Coexistance of the shield with other devices" width="320" >}}
+Jamming behavior and turn-around time in the presence of simulated meteorological cross-traffic.
 
 
 ### Discussion
